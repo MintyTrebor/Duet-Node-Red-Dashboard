@@ -9,7 +9,7 @@ Queries both 3d Printers (running Duet RepRap Firmware) for status information e
 	Current Enclousure Temp (only implemented for 1 printer)  
 Displays the webcam streams montioring each printer 
 Allows a target enclousure temp to be set and automatically turns on/off a heater via MQTT and tasmota wifi pwr socket.  
-Safely shutsdown the RPi remotely using "sshpass" to remotely send shutdown command to the RPi  
+Safely shutsdown the RPi remotely using "sshpass" to remotely send shutdown command to the RPi (you will need to change this cmd to meet your environments details)  
 
 Notes:  
 Two different methods for getting the data from the Duet RRF are used for completeness. One method is universal the other will only work with RRF deployed with a companion SBC.
