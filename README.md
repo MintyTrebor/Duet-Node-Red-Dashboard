@@ -1,6 +1,13 @@
 # Duet-Node-Red-Dashboard
 
-This is a simple mobile formatted node red dashboard that I use as a simple live status monitor for 2 3d printers. The flow achieves the following functions:  
+This is a simple mobile formatted node red dashboard that I use as a simple live status monitor for 2 3d printers. 
+
+![3D Printer Dashboard](printerdash.jpg)
+
+
+
+
+The flow achieves the following functions:  
 
 Powers on a RPi & 3d Printer(s) via MQTT and a tasmota wifi pwr socket(s).  
 Queries both 3d Printers (running Duet RepRap Firmware) for status information every 15 seconds including:  
