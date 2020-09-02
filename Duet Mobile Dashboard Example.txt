@@ -1,16 +1,16 @@
 [
     {
-        "id": "7d46c6b9.9d9188",
+        "id": "de2fd88b.8620a8",
         "type": "tab",
-        "label": "DB Garage",
+        "label": "Example Duet RRF Dashboard",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "ccf47057.206e3",
+        "id": "6a92462.224f0b8",
         "type": "ui_switch",
-        "z": "7d46c6b9.9d9188",
-        "name": "Mk2s Enclosure Pwr",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP1 Pwr",
         "label": "Mk2s Enclosure Pwr",
         "tooltip": "",
         "group": "52452535.e5876c",
@@ -29,66 +29,50 @@
         "offvalueType": "str",
         "officon": "fa-plug",
         "offcolor": "Red",
-        "x": 460,
-        "y": 80,
+        "x": 555,
+        "y": 315,
         "wires": [
             [
-                "ccbf0730.37ab98"
+                "176073f4.a015bc"
             ]
         ]
     },
     {
-        "id": "ccbf0730.37ab98",
+        "id": "176073f4.a015bc",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
-        "name": "Set Global Gar_Mk2s_Enc_Pwr_State Var",
-        "func": "var ChkState = global.get(\"Gar_Mk2s_Enc_Pwr_State\", \"persist\");\nif (ChkState != msg.payload){\n    global.set(\"Gar_Mk2s_Enc_Pwr_State\", msg.payload, \"persist\");\n    return msg;\n}",
+        "z": "de2fd88b.8620a8",
+        "name": "Set Global 3DP1_Pwr_State Var",
+        "func": "var ChkState = global.get(\"3DP1_Pwr_State\", \"persist\");\nif (ChkState != msg.payload){\n    global.set(\"3DP1_Pwr_State\", msg.payload, \"persist\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
-        "x": 780,
-        "y": 80,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 315,
         "wires": [
             [
-                "b1245f72.e0833"
+                "78b63b99.738574"
             ]
         ]
     },
     {
-        "id": "c4d38f89.6d1e6",
-        "type": "link in",
-        "z": "7d46c6b9.9d9188",
-        "name": "Mk2s Enc Pwr UI In",
-        "links": [
-            "d3cdd7c6.949c98",
-            "aa758646.e48468",
-            "a115d418.bff1d8"
-        ],
-        "x": 255,
-        "y": 80,
-        "wires": [
-            [
-                "ccf47057.206e3"
-            ]
-        ]
-    },
-    {
-        "id": "b1245f72.e0833",
+        "id": "78b63b99.738574",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Mk2s Enc Pwr UI Out",
         "links": [
             "1f271106.1fa32f",
-            "3706ef5e.aeb29"
+            "5ee18c.4f8b7e74"
         ],
-        "x": 1055,
-        "y": 80,
+        "x": 1245,
+        "y": 315,
         "wires": []
     },
     {
-        "id": "482c2f07.8031c",
+        "id": "941f4a9e.33b908",
         "type": "ui_switch",
-        "z": "7d46c6b9.9d9188",
-        "name": "TwoTrees 3D Printer Pwr",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP2 Pwr",
         "label": "TwoTrees 3D Printer Pwr",
         "tooltip": "",
         "group": "7ad2aae.9bd7054",
@@ -107,64 +91,48 @@
         "offvalueType": "str",
         "officon": "fa-plug",
         "offcolor": "Red",
-        "x": 470,
-        "y": 160,
+        "x": 555,
+        "y": 375,
         "wires": [
             [
-                "a39f22f1.fc6e9"
+                "92f0c2fd.209a5"
             ]
         ]
     },
     {
-        "id": "a39f22f1.fc6e9",
+        "id": "92f0c2fd.209a5",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
-        "name": "Set Global Gar_TT_3DP_Pwr_State Var",
-        "func": "var ChkState = global.get(\"Gar_TT_3DP_Pwr_State\", \"persist\");\nif (ChkState != msg.payload){\n    global.set(\"Gar_TT_3DP_Pwr_State\", msg.payload, \"persist\");\n    return msg;\n}",
+        "z": "de2fd88b.8620a8",
+        "name": "Set Global 3DP2_Pwr_State Var",
+        "func": "var ChkState = global.get(\"3DP2_Pwr_State\", \"persist\");\nif (ChkState != msg.payload){\n    global.set(\"3DP2_Pwr_State\", msg.payload, \"persist\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 780,
-        "y": 160,
+        "x": 880,
+        "y": 375,
         "wires": [
             [
-                "99e2e255.44764"
+                "203bc921.9d0f86"
             ]
         ]
     },
     {
-        "id": "1012b5f8.33892a",
-        "type": "link in",
-        "z": "7d46c6b9.9d9188",
-        "name": "TT 3DP Pwr UI In",
-        "links": [
-            "b0495d58.47cca"
-        ],
-        "x": 255,
-        "y": 160,
-        "wires": [
-            [
-                "482c2f07.8031c"
-            ]
-        ]
-    },
-    {
-        "id": "99e2e255.44764",
+        "id": "203bc921.9d0f86",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "TT 3DP Pwr UI Out",
         "links": [
-            "273948a5.f5f998"
+            "2627e436.3d71dc"
         ],
-        "x": 1055,
-        "y": 140,
+        "x": 1245,
+        "y": 375,
         "wires": []
     },
     {
-        "id": "aabd351c.7eb0f8",
+        "id": "a0ad212.3fcd6e",
         "type": "ui_switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Enc Heater Pwr",
         "label": "Enc Heater Pwr",
         "tooltip": "",
@@ -184,78 +152,51 @@
         "offvalueType": "str",
         "officon": "fa-plug",
         "offcolor": "Red",
-        "x": 440,
-        "y": 240,
+        "x": 575,
+        "y": 435,
         "wires": [
             [
-                "45b14b9b.9eb1e4"
+                "a487171d.c7ab48"
             ]
         ]
     },
     {
-        "id": "45b14b9b.9eb1e4",
+        "id": "a487171d.c7ab48",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Set Global Gar_Enc_Heater_Pwr_State Var",
         "func": "var ChkState = global.get(\"Gar_Enc_Heater_Pwr_State\", \"persist\");\nif (ChkState != msg.payload){\n    global.set(\"Gar_Enc_Heater_Pwr_State\", msg.payload, \"persist\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
-        "x": 770,
-        "y": 240,
+        "x": 920,
+        "y": 435,
         "wires": [
             [
-                "4a39c770.9b7748",
-                "a2901f3e.12a9d"
+                "8b5055fe.e7bdc8"
             ]
         ]
     },
     {
-        "id": "ab556289.0781d",
+        "id": "1f585d64.8c45a3",
         "type": "link in",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Enc Heater Pwr UI In",
         "links": [
-            "f70f954c.f74298",
-            "e5fa95dc.63f588",
-            "a4392450.cdab68",
-            "84d00dbc.7fe2",
-            "f312bc6f.6e52a",
-            "9ea467e1.1d6f08"
+            "45ba4f97.8c886",
+            "b746d04b.03189"
         ],
-        "x": 255,
-        "y": 240,
+        "x": 390,
+        "y": 435,
         "wires": [
             [
-                "aabd351c.7eb0f8"
+                "a0ad212.3fcd6e"
             ]
         ]
     },
     {
-        "id": "4a39c770.9b7748",
-        "type": "link out",
-        "z": "7d46c6b9.9d9188",
-        "name": "Enc Heater Pwr UI Out",
-        "links": [],
-        "x": 1055,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "a2901f3e.12a9d",
-        "type": "link out",
-        "z": "7d46c6b9.9d9188",
-        "name": "Tas Skt 3",
-        "links": [
-            "204ca885.eb1008"
-        ],
-        "x": 1055,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "e52110b6.618c7",
+        "id": "ca5be1e.e873b2",
         "type": "ui_gauge",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Enc Temp",
         "group": "52452535.e5876c",
         "order": 1,
@@ -274,14 +215,14 @@
         ],
         "seg1": "18",
         "seg2": "30",
-        "x": 3250,
-        "y": 850,
+        "x": 2490,
+        "y": 765,
         "wires": []
     },
     {
-        "id": "40a12ed6.d6139",
+        "id": "54b3fa6a.4f9cf4",
         "type": "ui_slider",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Target Temp",
         "label": "Target Temp",
         "tooltip": "",
@@ -295,18 +236,18 @@
         "min": 0,
         "max": "40",
         "step": "5",
-        "x": 470,
-        "y": 400,
+        "x": 565,
+        "y": 615,
         "wires": [
             [
-                "db542a78.f0dfc8"
+                "bee6a10.350f46"
             ]
         ]
     },
     {
-        "id": "28c66a09.26dbe6",
+        "id": "e0bae971.784748",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Temp Check",
         "property": "payload.currtemp",
         "propertyType": "msg",
@@ -325,39 +266,39 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2000,
-        "y": 355,
+        "x": 1975,
+        "y": 555,
         "wires": [
             [
-                "3f723745.ecb578"
+                "ebffaa75.8a6448"
             ],
             [
-                "8e5d6d7f.41a33"
+                "81a01176.901fc"
             ]
         ]
     },
     {
-        "id": "227803d2.30aabc",
+        "id": "8c8fb471.816ae8",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Get Enc Pwr Status & Set Temp Range Vals",
         "func": "var currtemp = flow.get(\"currtemp\");\nvar targtemp = flow.get(\"targettemp\");\nvar encstate = global.get(\"Gar_Mk2s_Enc_Pwr_State\", \"persist\");\nif (isNaN(currtemp)) {\n    currtemp = 0;\n} \nif (isNaN(targtemp)) {\n    targtemp = 0;\n}\nmsg.payload = {\"currtemp\": currtemp, \"targtemphigh\": targtemp+1, \"targtemplow\": targtemp-1, \"encpwrstate\": encstate, \"targtemp\": targtemp};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1095,
-        "y": 400,
+        "x": 1160,
+        "y": 615,
         "wires": [
             [
-                "9e1a2a9e.190248"
+                "f78e07ea.0144a8"
             ]
         ]
     },
     {
-        "id": "329f8348.c91e1c",
+        "id": "a8a0ef89.82687",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Check Enc Pwr State",
         "property": "payload.encpwrstate",
         "propertyType": "msg",
@@ -376,21 +317,21 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1750,
-        "y": 400,
+        "x": 1735,
+        "y": 555,
         "wires": [
             [
-                "28c66a09.26dbe6"
+                "e0bae971.784748"
             ],
             [
-                "8e5d6d7f.41a33"
+                "81a01176.901fc"
             ]
         ]
     },
     {
-        "id": "19ec1f15.cad861",
+        "id": "79e41cbc.1cc6d4",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "OFF",
         "rules": [
             {
@@ -406,18 +347,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2320,
-        "y": 500,
+        "x": 2195,
+        "y": 675,
         "wires": [
             [
-                "84d00dbc.7fe2"
+                "b746d04b.03189"
             ]
         ]
     },
     {
-        "id": "3f723745.ecb578",
+        "id": "ebffaa75.8a6448",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "ON",
         "rules": [
             {
@@ -433,49 +374,49 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2320,
-        "y": 300,
+        "x": 2195,
+        "y": 555,
         "wires": [
             [
-                "84d00dbc.7fe2",
-                "1f1008c4.59ecf7"
+                "b746d04b.03189",
+                "8dee03a3.20c1d"
             ]
         ]
     },
     {
-        "id": "84d00dbc.7fe2",
+        "id": "b746d04b.03189",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "links": [
-            "ab556289.0781d"
+            "1f585d64.8c45a3"
         ],
-        "x": 2565,
-        "y": 420,
+        "x": 2445,
+        "y": 615,
         "wires": []
     },
     {
-        "id": "1f1008c4.59ecf7",
+        "id": "8dee03a3.20c1d",
         "type": "stoptimer",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "duration": "10",
         "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
         "name": "Delay 10 Mins",
-        "x": 2350,
-        "y": 400,
+        "x": 2225,
+        "y": 615,
         "wires": [
             [
-                "19ec1f15.cad861"
+                "79e41cbc.1cc6d4"
             ],
             []
         ]
     },
     {
-        "id": "8e5d6d7f.41a33",
+        "id": "81a01176.901fc",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Cancel Timer",
         "rules": [
             {
@@ -491,53 +432,53 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2000,
-        "y": 460,
+        "x": 1765,
+        "y": 660,
         "wires": [
             [
-                "1f1008c4.59ecf7",
-                "19ec1f15.cad861"
+                "8dee03a3.20c1d",
+                "79e41cbc.1cc6d4"
             ]
         ]
     },
     {
-        "id": "db542a78.f0dfc8",
+        "id": "bee6a10.350f46",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "set targettemp var",
         "func": "flow.set(\"targettemp\", msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 745,
-        "y": 400,
+        "x": 840,
+        "y": 615,
         "wires": [
             [
-                "227803d2.30aabc"
+                "8c8fb471.816ae8"
             ]
         ]
     },
     {
-        "id": "bf11aa36.002488",
+        "id": "89c0506.9bdaab",
         "type": "link in",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Enc Target Temp (Num) UI In",
         "links": [
             "4b67b28.f25f94c",
-            "b2cecb68.384248",
+            "86126cbb.9ba8e",
             "a791daa9.cea648"
         ],
-        "x": 295,
-        "y": 400,
+        "x": 390,
+        "y": 615,
         "wires": [
             [
-                "40a12ed6.d6139"
+                "54b3fa6a.4f9cf4"
             ]
         ]
     },
     {
-        "id": "9e1a2a9e.190248",
+        "id": "f78e07ea.0144a8",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Check targ temp > 0",
         "property": "payload.targtemp",
         "propertyType": "msg",
@@ -556,21 +497,21 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1450,
-        "y": 400,
+        "x": 1480,
+        "y": 615,
         "wires": [
             [
-                "329f8348.c91e1c"
+                "a8a0ef89.82687"
             ],
             [
-                "8e5d6d7f.41a33"
+                "81a01176.901fc"
             ]
         ]
     },
     {
-        "id": "6d35ac00.a4c344",
+        "id": "3d72f985.8396b6",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "rules": [
             {
@@ -586,40 +527,40 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3060,
-        "y": 850,
+        "x": 2300,
+        "y": 765,
         "wires": [
             [
-                "e52110b6.618c7"
+                "ca5be1e.e873b2"
             ]
         ]
     },
     {
-        "id": "c14fb819.568968",
+        "id": "9b9feea3.2b4b8",
         "type": "exec",
-        "z": "7d46c6b9.9d9188",
-        "command": "/usr/bin/sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no  USERNAME@10.66.1.52 'sudo shutdown now'",
+        "z": "de2fd88b.8620a8",
+        "command": "/usr/bin/sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no  USERNAME@RPI_IP 'sudo shutdown now'",
         "addpay": false,
         "append": "",
         "useSpawn": "false",
         "timer": "",
         "oldrc": false,
-        "name": "Shutdown Pi",
-        "x": 1030,
-        "y": 745,
+        "name": "Shutdown RPI",
+        "x": 1230,
+        "y": 915,
         "wires": [
             [
-                "65b7b8b9.c8c418",
-                "f1b22007.065ab"
+                "42becf00.fdfc6",
+                "ef31551.2daf2a8"
             ],
             [],
             []
         ]
     },
     {
-        "id": "f1b22007.065ab",
+        "id": "ef31551.2daf2a8",
         "type": "delay",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "pauseType": "delay",
         "timeout": "60",
@@ -631,19 +572,19 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 840,
-        "y": 880,
+        "x": 1695,
+        "y": 900,
         "wires": [
             [
-                "8ad3f5b2.1e95f8",
-                "13278ad6.bad805"
+                "aad8775c.0f1038",
+                "6f210101.177ba"
             ]
         ]
     },
     {
-        "id": "c892b9f1.15e098",
+        "id": "cc6de6b2.3641f8",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "ON / OFF",
         "property": "payload",
         "propertyType": "msg",
@@ -662,89 +603,89 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 385,
-        "y": 655,
-        "wires": [
-            [
-                "f83eaaf9.a2e128",
-                "54a78281.e4f30c"
-            ],
-            [
-                "6f79390d.197a08",
-                "1b917a15.ee9646"
-            ]
-        ]
-    },
-    {
-        "id": "65b7b8b9.c8c418",
-        "type": "change",
-        "z": "7d46c6b9.9d9188",
-        "name": "OFF",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OFF",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1295,
-        "y": 765,
-        "wires": [
-            [
-                "f312bc6f.6e52a"
-            ]
-        ]
-    },
-    {
-        "id": "f312bc6f.6e52a",
-        "type": "link out",
-        "z": "7d46c6b9.9d9188",
-        "name": "Enc Heater",
-        "links": [
-            "ab556289.0781d"
-        ],
-        "x": 1455,
-        "y": 765,
-        "wires": []
-    },
-    {
-        "id": "8ad3f5b2.1e95f8",
-        "type": "change",
-        "z": "7d46c6b9.9d9188",
-        "name": "OFF",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OFF",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1070,
+        "x": 555,
         "y": 825,
         "wires": [
             [
-                "f83eaaf9.a2e128"
+                "7e474047.94376",
+                "ab118309.2ff98"
+            ],
+            [
+                "b30a5a5e.9b3f78",
+                "4230988d.0a0688"
             ]
         ]
     },
     {
-        "id": "13278ad6.bad805",
+        "id": "42becf00.fdfc6",
+        "type": "change",
+        "z": "de2fd88b.8620a8",
+        "name": "OFF",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "OFF",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1430,
+        "y": 855,
+        "wires": [
+            [
+                "45ba4f97.8c886"
+            ]
+        ]
+    },
+    {
+        "id": "45ba4f97.8c886",
+        "type": "link out",
+        "z": "de2fd88b.8620a8",
+        "name": "Enc Heater",
+        "links": [
+            "1f585d64.8c45a3"
+        ],
+        "x": 1530,
+        "y": 855,
+        "wires": []
+    },
+    {
+        "id": "aad8775c.0f1038",
+        "type": "change",
+        "z": "de2fd88b.8620a8",
+        "name": "OFF",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "OFF",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1835,
+        "y": 960,
+        "wires": [
+            [
+                "8d072ea6.e1d2c"
+            ]
+        ]
+    },
+    {
+        "id": "6f210101.177ba",
         "type": "delay",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "pauseType": "delay",
         "timeout": "5",
@@ -756,34 +697,34 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1060,
-        "y": 880,
+        "x": 1965,
+        "y": 900,
         "wires": [
             [
-                "363dac25.0379b4"
+                "dbdc3d69.6bf87"
             ]
         ]
     },
     {
-        "id": "3706ef5e.aeb29",
+        "id": "5ee18c.4f8b7e74",
         "type": "link in",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "MK2s Enc Pwr",
         "links": [
-            "b1245f72.e0833"
+            "78b63b99.738574"
         ],
-        "x": 260,
-        "y": 655,
+        "x": 390,
+        "y": 825,
         "wires": [
             [
-                "c892b9f1.15e098"
+                "cc6de6b2.3641f8"
             ]
         ]
     },
     {
-        "id": "363dac25.0379b4",
+        "id": "dbdc3d69.6bf87",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Set Enc Targ Temp to 0",
         "rules": [
             {
@@ -799,122 +740,84 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1270,
-        "y": 880,
+        "x": 2270,
+        "y": 900,
         "wires": [
             [
-                "b2cecb68.384248",
-                "e52110b6.618c7"
+                "86126cbb.9ba8e",
+                "ca5be1e.e873b2"
             ]
         ]
     },
     {
-        "id": "b2cecb68.384248",
+        "id": "86126cbb.9ba8e",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "TargTemp",
         "links": [
-            "bf11aa36.002488"
+            "89c0506.9bdaab"
         ],
-        "x": 1455,
-        "y": 880,
+        "x": 2475,
+        "y": 900,
         "wires": []
     },
     {
-        "id": "f83eaaf9.a2e128",
+        "id": "7e474047.94376",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Tas Skt 1",
         "links": [
-            "f20f52bd.2d13e"
+            "2c6323d0.e8051c"
         ],
-        "x": 2035,
-        "y": 790,
+        "x": 750,
+        "y": 690,
         "wires": []
     },
     {
-        "id": "9bcbd4e8.621fe8",
-        "type": "ui_ui_control",
-        "z": "7d46c6b9.9d9188",
-        "name": "Change Tab",
-        "events": "change",
-        "x": 1575,
-        "y": 75,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c5675f39.05f86",
-        "type": "ui_button",
-        "z": "7d46c6b9.9d9188",
-        "name": "Main menu",
-        "group": "85ca0704.c34e18",
-        "order": 2,
-        "width": "5",
-        "height": "1",
-        "passthru": false,
-        "label": "Main Menu",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "Red",
-        "icon": "fa-list-ol ",
-        "payload": "{\"tab\": \"Home Control Main Menu\"}",
-        "payloadType": "json",
-        "topic": "",
-        "x": 1315,
-        "y": 75,
-        "wires": [
-            [
-                "9bcbd4e8.621fe8"
-            ]
-        ]
-    },
-    {
-        "id": "e7bae8f9.b851b8",
+        "id": "377c1956.eaa976",
         "type": "comment",
-        "z": "7d46c6b9.9d9188",
-        "name": "Safely shutdown mk2s pi before pwr off",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP1 Safely shutdown RPi before pwr off",
         "info": "",
-        "x": 390,
-        "y": 585,
+        "x": 175,
+        "y": 825,
         "wires": []
     },
     {
-        "id": "39099084.9d92c",
+        "id": "3e3fa6a5.8c087a",
         "type": "comment",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "enclosure temp control",
         "info": "",
-        "x": 560,
-        "y": 300,
+        "x": 145,
+        "y": 615,
         "wires": []
     },
     {
-        "id": "29ec1375.2a5eac",
+        "id": "3705ee7d.55a452",
         "type": "exec",
-        "z": "7d46c6b9.9d9188",
-        "command": "/usr/bin/sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no  USERNAME@10.66.1.52 'sudo shutdown now'",
+        "z": "de2fd88b.8620a8",
+        "command": "/usr/bin/sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no  USERNAME@RPI_IP 'sudo shutdown now'",
         "addpay": false,
         "append": "",
         "useSpawn": "false",
         "timer": "",
         "oldrc": false,
-        "name": "Shutdown Pi",
-        "x": 1290,
-        "y": 1095,
+        "name": "Shutdown RPI",
+        "x": 1230,
+        "y": 1365,
         "wires": [
             [
-                "b74db297.24104"
+                "459fd29a.059dcc"
             ],
             [],
             []
         ]
     },
     {
-        "id": "b74db297.24104",
+        "id": "459fd29a.059dcc",
         "type": "delay",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "pauseType": "delay",
         "timeout": "60",
@@ -926,18 +829,18 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1530,
-        "y": 1080,
+        "x": 1425,
+        "y": 1365,
         "wires": [
             [
-                "5a2944d6.65046c"
+                "77f02cf2.9bd6b4"
             ]
         ]
     },
     {
-        "id": "c0a8f4bc.518b48",
+        "id": "4b661a74.acd974",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "ON / OFF",
         "property": "payload",
         "propertyType": "msg",
@@ -956,23 +859,23 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 380,
-        "y": 1060,
+        "x": 555,
+        "y": 1305,
         "wires": [
             [
-                "f9ead914.d7b0f8",
-                "50ec7d9e.499454"
+                "6b4cfa75.cae7a4",
+                "3fcfce16.967fa2"
             ],
             [
-                "4114572f.a26038",
-                "a9eb0686.ba4028"
+                "a9548a14.167bc8",
+                "2810393b.ac0946"
             ]
         ]
     },
     {
-        "id": "5a2944d6.65046c",
+        "id": "77f02cf2.9bd6b4",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "OFF",
         "rules": [
             {
@@ -988,58 +891,48 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1490,
-        "y": 1215,
+        "x": 1610,
+        "y": 1410,
         "wires": [
             [
-                "f9ead914.d7b0f8"
+                "b629df4b.4a53d"
             ]
         ]
     },
     {
-        "id": "273948a5.f5f998",
+        "id": "2627e436.3d71dc",
         "type": "link in",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "TT Pwr",
         "links": [
-            "99e2e255.44764"
+            "203bc921.9d0f86"
         ],
-        "x": 255,
-        "y": 1060,
+        "x": 390,
+        "y": 1300,
         "wires": [
             [
-                "c0a8f4bc.518b48"
+                "4b661a74.acd974"
             ]
         ]
     },
     {
-        "id": "f9ead914.d7b0f8",
+        "id": "6b4cfa75.cae7a4",
         "type": "link out",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Tas Skt 2",
         "links": [
-            "41253e48.b6cf"
+            "d7f74565.f258f8"
         ],
-        "x": 1805,
-        "y": 1040,
+        "x": 750,
+        "y": 1140,
         "wires": []
     },
     {
-        "id": "a5d849f7.a0f248",
-        "type": "comment",
-        "z": "7d46c6b9.9d9188",
-        "name": "Safely shutdown tt's pi before pwr off",
-        "info": "",
-        "x": 420,
-        "y": 1020,
-        "wires": []
-    },
-    {
-        "id": "c0bec814.266438",
+        "id": "384d4cea.5766b4",
         "type": "ui_template",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "group": "7ad2aae.9bd7054",
-        "name": "CCTV2",
+        "name": "CCTV 3DP2",
         "order": 5,
         "width": "7",
         "height": "4",
@@ -1048,18 +941,18 @@
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
-        "x": 1305,
-        "y": 175,
+        "x": 565,
+        "y": 255,
         "wires": [
             []
         ]
     },
     {
-        "id": "abb41a29.265528",
+        "id": "dd617585.f79768",
         "type": "ui_template",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "group": "52452535.e5876c",
-        "name": "CCTV",
+        "name": "CCTV 3DP1",
         "order": 9,
         "width": "7",
         "height": "4",
@@ -1068,65 +961,65 @@
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
-        "x": 1295,
-        "y": 235,
+        "x": 565,
+        "y": 195,
         "wires": [
             []
         ]
     },
     {
-        "id": "a7ee4e95.cc88c",
+        "id": "c4db7044.299ba",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Conv to num & set currtemp var",
         "func": "var currtemp = msg.payload.actual;\nflow.set(\"currtemp\", currtemp);\nmsg.payload = {\"currtemp\": Math.round(currtemp)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 2795,
-        "y": 835,
+        "x": 2035,
+        "y": 750,
         "wires": [
             [
-                "6d35ac00.a4c344",
-                "227803d2.30aabc"
+                "3d72f985.8396b6",
+                "8c8fb471.816ae8"
             ]
         ]
     },
     {
-        "id": "46ff0d.cabfa0f4",
+        "id": "37b72a5c.e28fb6",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Conv to num",
         "func": "var currtemp = msg.payload.actual;\nmsg.payload = {\"currtemp\": Math.round(currtemp)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 2875,
-        "y": 890,
+        "x": 1975,
+        "y": 795,
         "wires": [
             [
-                "db9ef4f9.62c918"
+                "67336053.24811"
             ]
         ]
     },
     {
-        "id": "a2d3a098.b1e0e",
+        "id": "79c1b715.e167a8",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Conv to num",
         "func": "var currtemp = msg.payload.actual;\nmsg.payload = {\"currtemp\": Math.round(currtemp)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 2875,
-        "y": 930,
+        "x": 1975,
+        "y": 840,
         "wires": [
             [
-                "60472475.ebb2cc"
+                "a1b2f37e.dea3c"
             ]
         ]
     },
     {
-        "id": "db9ef4f9.62c918",
+        "id": "67336053.24811",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "rules": [
             {
@@ -1142,18 +1035,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3065,
-        "y": 890,
+        "x": 2305,
+        "y": 805,
         "wires": [
             [
-                "d3e5aa5e.4603f8"
+                "f3420e6b.94ba4"
             ]
         ]
     },
     {
-        "id": "60472475.ebb2cc",
+        "id": "a1b2f37e.dea3c",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "rules": [
             {
@@ -1169,18 +1062,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3065,
-        "y": 930,
+        "x": 2305,
+        "y": 845,
         "wires": [
             [
-                "fb4d598c.272048"
+                "10425486.54bf4b"
             ]
         ]
     },
     {
-        "id": "d3e5aa5e.4603f8",
+        "id": "f3420e6b.94ba4",
         "type": "ui_gauge",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Tool Temp",
         "group": "52452535.e5876c",
         "order": 3,
@@ -1199,14 +1092,14 @@
         ],
         "seg1": "160",
         "seg2": "285",
-        "x": 3255,
-        "y": 890,
+        "x": 2495,
+        "y": 805,
         "wires": []
     },
     {
-        "id": "fb4d598c.272048",
+        "id": "10425486.54bf4b",
         "type": "ui_gauge",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Bed Temp",
         "group": "52452535.e5876c",
         "order": 5,
@@ -1225,37 +1118,37 @@
         ],
         "seg1": "50",
         "seg2": "85",
-        "x": 3245,
-        "y": 930,
+        "x": 2485,
+        "y": 845,
         "wires": []
     },
     {
-        "id": "52b350f3.f1c59",
+        "id": "3f3e45b9.3d9f5a",
         "type": "http request",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "DWC",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://10.66.1.52/machine/status",
+        "url": "http://3DP1_IP/machine/status",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 2280,
-        "y": 835,
+        "x": 1430,
+        "y": 750,
         "wires": [
             [
-                "c0ac30dd.5226d",
-                "d75e840a.0e5c08",
-                "4c343135.d5813"
+                "61a9446f.17883c",
+                "373e6fae.24fec",
+                "9e2a0a4c.f62ce8"
             ]
         ]
     },
     {
-        "id": "54a78281.e4f30c",
+        "id": "ab118309.2ff98",
         "type": "delay",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "pauseType": "delay",
         "timeout": "60",
@@ -1267,37 +1160,37 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1645,
-        "y": 715,
+        "x": 795,
+        "y": 750,
         "wires": [
             [
-                "a1584b4e.f7dbf8"
+                "fd8474d3.5a6c38"
             ]
         ]
     },
     {
-        "id": "a1584b4e.f7dbf8",
+        "id": "fd8474d3.5a6c38",
         "type": "looptimer",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "duration": "15",
         "units": "Second",
         "maxloops": "100000",
         "maxtimeout": "24",
         "maxtimeoutunits": "Hour",
         "name": "Check Every 15 Seconds",
-        "x": 1935,
-        "y": 715,
+        "x": 1220,
+        "y": 750,
         "wires": [
             [
-                "52b350f3.f1c59"
+                "3f3e45b9.3d9f5a"
             ],
             []
         ]
     },
     {
-        "id": "c0ac30dd.5226d",
+        "id": "61a9446f.17883c",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Extract Chamber Temp",
         "rules": [
             {
@@ -1313,18 +1206,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2495,
-        "y": 835,
+        "x": 1735,
+        "y": 750,
         "wires": [
             [
-                "a7ee4e95.cc88c"
+                "c4db7044.299ba"
             ]
         ]
     },
     {
-        "id": "6f79390d.197a08",
+        "id": "b30a5a5e.9b3f78",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "STOP LOOP",
         "rules": [
             {
@@ -1340,76 +1233,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1640,
-        "y": 670,
+        "x": 805,
+        "y": 825,
         "wires": [
             [
-                "a1584b4e.f7dbf8"
+                "fd8474d3.5a6c38"
             ]
         ]
     },
     {
-        "id": "9ae67efe.e6455",
-        "type": "inject",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1840,
-        "y": 640,
-        "wires": [
-            [
-                "a1584b4e.f7dbf8"
-            ]
-        ]
-    },
-    {
-        "id": "4cab0adc.404ae4",
-        "type": "inject",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1495,
-        "y": 610,
-        "wires": [
-            [
-                "6f79390d.197a08"
-            ]
-        ]
-    },
-    {
-        "id": "d75e840a.0e5c08",
+        "id": "373e6fae.24fec",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Extract Tool Temp",
         "rules": [
             {
@@ -1425,18 +1260,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2485,
-        "y": 880,
+        "x": 1725,
+        "y": 795,
         "wires": [
             [
-                "46ff0d.cabfa0f4"
+                "37b72a5c.e28fb6"
             ]
         ]
     },
     {
-        "id": "4c343135.d5813",
+        "id": "9e2a0a4c.f62ce8",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Extract Bed Temp",
         "rules": [
             {
@@ -1452,41 +1287,40 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2485,
-        "y": 925,
+        "x": 1725,
+        "y": 840,
         "wires": [
             [
-                "a2d3a098.b1e0e"
+                "79c1b715.e167a8"
             ]
         ]
     },
     {
-        "id": "96c307bf.838c78",
+        "id": "8429f008.01cb",
         "type": "http request",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "DWC",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://10.66.1.55/rr_status?type=1",
+        "url": "http://3DP2_IP/rr_status?type=1",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 2240,
-        "y": 1335,
+        "x": 1430,
+        "y": 1200,
         "wires": [
             [
-                "f7eb7f20.d0e57",
-                "3d6341d.cc9cebe",
-                "9cdb6ed2.2fe47"
+                "f83540bb.afbdd",
+                "32cb0316.da647c"
             ]
         ]
     },
     {
-        "id": "50ec7d9e.499454",
+        "id": "3fcfce16.967fa2",
         "type": "delay",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "pauseType": "delay",
         "timeout": "60",
@@ -1498,37 +1332,37 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1665,
-        "y": 1335,
+        "x": 795,
+        "y": 1200,
         "wires": [
             [
-                "7f94f973.f82ba8"
+                "9f44fc49.a5fa4"
             ]
         ]
     },
     {
-        "id": "7f94f973.f82ba8",
+        "id": "9f44fc49.a5fa4",
         "type": "looptimer",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "duration": "15",
         "units": "Second",
         "maxloops": "100000",
         "maxtimeout": "24",
         "maxtimeoutunits": "Hour",
         "name": "Check Every 15 Seconds",
-        "x": 2000,
-        "y": 1335,
+        "x": 1220,
+        "y": 1200,
         "wires": [
             [
-                "96c307bf.838c78"
+                "8429f008.01cb"
             ],
             []
         ]
     },
     {
-        "id": "4114572f.a26038",
+        "id": "a9548a14.167bc8",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "STOP LOOP",
         "rules": [
             {
@@ -1544,92 +1378,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1685,
-        "y": 1425,
+        "x": 805,
+        "y": 1305,
         "wires": [
             [
-                "7f94f973.f82ba8"
+                "9f44fc49.a5fa4"
             ]
         ]
     },
     {
-        "id": "9dda50ea.e03f",
-        "type": "inject",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1750,
-        "y": 1230,
-        "wires": [
-            [
-                "7f94f973.f82ba8"
-            ]
-        ]
-    },
-    {
-        "id": "fa55744d.3be618",
-        "type": "inject",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1515,
-        "y": 1530,
-        "wires": [
-            [
-                "4114572f.a26038"
-            ]
-        ]
-    },
-    {
-        "id": "f7eb7f20.d0e57",
-        "type": "debug",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2720,
-        "y": 1140,
-        "wires": []
-    },
-    {
-        "id": "3d6341d.cc9cebe",
+        "id": "f83540bb.afbdd",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Extract Tool Temp",
         "rules": [
             {
@@ -1645,18 +1405,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2445,
-        "y": 1380,
+        "x": 1890,
+        "y": 1170,
         "wires": [
             [
-                "cd55e8b1.509918"
+                "734e9f73.ee24b"
             ]
         ]
     },
     {
-        "id": "9cdb6ed2.2fe47",
+        "id": "32cb0316.da647c",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Extract Bed Temp",
         "rules": [
             {
@@ -1672,50 +1432,50 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2445,
-        "y": 1425,
+        "x": 1890,
+        "y": 1230,
         "wires": [
             [
-                "6908a596.e1dd1c"
+                "b3d7afe4.f04f"
             ]
         ]
     },
     {
-        "id": "cd55e8b1.509918",
+        "id": "734e9f73.ee24b",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Conv to num",
         "func": "var currtemp = msg.payload.actual;\nmsg.payload = {\"currtemp\": Math.round(currtemp)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 2665,
-        "y": 1380,
+        "x": 2110,
+        "y": 1170,
         "wires": [
             [
-                "b71fca26.ce8a98"
+                "cf50321f.c375a"
             ]
         ]
     },
     {
-        "id": "6908a596.e1dd1c",
+        "id": "b3d7afe4.f04f",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Conv to num",
         "func": "var currtemp = msg.payload.actual;\nmsg.payload = {\"currtemp\": Math.round(currtemp)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 2665,
-        "y": 1420,
+        "x": 2110,
+        "y": 1230,
         "wires": [
             [
-                "d1abba7.0e5ba48"
+                "2565b6b4.9ec4ba"
             ]
         ]
     },
     {
-        "id": "b71fca26.ce8a98",
+        "id": "cf50321f.c375a",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "rules": [
             {
@@ -1731,18 +1491,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2865,
-        "y": 1380,
+        "x": 2300,
+        "y": 1170,
         "wires": [
             [
-                "6bc3b5a4.216e8c"
+                "48671f45.5d76d"
             ]
         ]
     },
     {
-        "id": "d1abba7.0e5ba48",
+        "id": "2565b6b4.9ec4ba",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "",
         "rules": [
             {
@@ -1758,18 +1518,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2865,
-        "y": 1420,
+        "x": 2300,
+        "y": 1230,
         "wires": [
             [
-                "f337b52b.e9d8f8"
+                "4c719e43.9990a"
             ]
         ]
     },
     {
-        "id": "6bc3b5a4.216e8c",
+        "id": "48671f45.5d76d",
         "type": "ui_gauge",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Tool Temp",
         "group": "7ad2aae.9bd7054",
         "order": 1,
@@ -1788,14 +1548,14 @@
         ],
         "seg1": "160",
         "seg2": "285",
-        "x": 3045,
-        "y": 1380,
+        "x": 2500,
+        "y": 1170,
         "wires": []
     },
     {
-        "id": "f337b52b.e9d8f8",
+        "id": "4c719e43.9990a",
         "type": "ui_gauge",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Bed Temp",
         "group": "7ad2aae.9bd7054",
         "order": 3,
@@ -1814,32 +1574,32 @@
         ],
         "seg1": "50",
         "seg2": "85",
-        "x": 3025,
-        "y": 1420,
+        "x": 2490,
+        "y": 1230,
         "wires": []
     },
     {
-        "id": "1b917a15.ee9646",
+        "id": "4230988d.0a0688",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "func": "var ChkState = global.get(\"Gar_TT_3DP_Pwr_State\", \"persist\");\nif (ChkState != \"ON\"){\n    msg.payload = \"TURNOFFPI\"\n} else {\n    msg.payload = \"LEAVEPION\"\n}\nreturn msg;",
+        "z": "de2fd88b.8620a8",
+        "name": "Check 3DP2 PWR Status",
+        "func": "var ChkState = global.get(\"3DP2_Pwr_State\", \"persist\");\nif (ChkState != \"ON\"){\n    msg.payload = \"TURNOFFPI\"\n} else {\n    msg.payload = \"LEAVEPION\"\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 565,
-        "y": 730,
+        "x": 785,
+        "y": 960,
         "wires": [
             [
-                "4bed51c5.95567"
+                "f74af7f2.20a118"
             ]
         ]
     },
     {
-        "id": "4bed51c5.95567",
+        "id": "f74af7f2.20a118",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "PI STATUS",
         "property": "payload",
         "propertyType": "msg",
@@ -1858,39 +1618,39 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 770,
-        "y": 730,
+        "x": 1000,
+        "y": 960,
         "wires": [
             [
-                "c14fb819.568968"
+                "9b9feea3.2b4b8"
             ],
             [
-                "8ad3f5b2.1e95f8"
+                "aad8775c.0f1038"
             ]
         ]
     },
     {
-        "id": "a9eb0686.ba4028",
+        "id": "2810393b.ac0946",
         "type": "function",
-        "z": "7d46c6b9.9d9188",
-        "name": "",
-        "func": "var ChkState = global.get(\"Gar_Mk2s_Enc_Pwr_State\", \"persist\");\nif (ChkState != \"ON\"){\n    msg.payload = \"TURNOFFPI\"\n} else {\n    msg.payload = \"LEAVEPION\"\n}\nreturn msg;",
+        "z": "de2fd88b.8620a8",
+        "name": "Check 3DP1 PWR Status",
+        "func": "var ChkState = global.get(\"3DP1_Pwr_State\", \"persist\");\nif (ChkState != \"ON\"){\n    msg.payload = \"TURNOFFPI\"\n} else {\n    msg.payload = \"LEAVEPION\"\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 885,
-        "y": 1095,
+        "x": 785,
+        "y": 1410,
         "wires": [
             [
-                "167d4938.e4f287"
+                "6dae8766.7a9d88"
             ]
         ]
     },
     {
-        "id": "167d4938.e4f287",
+        "id": "6dae8766.7a9d88",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "PI STATUS",
         "property": "payload",
         "propertyType": "msg",
@@ -1909,22 +1669,265 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1060,
-        "y": 1095,
+        "x": 1000,
+        "y": 1410,
         "wires": [
             [
-                "29ec1375.2a5eac"
+                "3705ee7d.55a452"
             ],
             [
-                "5a2944d6.65046c"
+                "77f02cf2.9bd6b4"
             ]
         ]
     },
     {
-        "id": "9e26e962.7459c8",
+        "id": "36fbbc34.f60484",
+        "type": "mqtt out",
+        "z": "de2fd88b.8620a8",
+        "name": "Sw_003",
+        "topic": "tasmota/Sw_003/cmnd/POWER1",
+        "qos": "0",
+        "retain": "false",
+        "broker": "22518fa6.b7642",
+        "x": 1560,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "4d361d7a.cfbf64",
+        "type": "mqtt out",
+        "z": "de2fd88b.8620a8",
+        "name": "Sw_002",
+        "topic": "tasmota/Sw_002/cmnd/POWER1",
+        "qos": "0",
+        "retain": "false",
+        "broker": "22518fa6.b7642",
+        "x": 1560,
+        "y": 375,
+        "wires": []
+    },
+    {
+        "id": "b10d031e.9885d",
+        "type": "mqtt out",
+        "z": "de2fd88b.8620a8",
+        "name": "Sw_001",
+        "topic": "tasmota/Sw_001/cmnd/POWER1",
+        "qos": "0",
+        "retain": "false",
+        "broker": "22518fa6.b7642",
+        "x": 1560,
+        "y": 315,
+        "wires": []
+    },
+    {
+        "id": "22f73be6.260b24",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "Dashboard UI & MQTT Control",
+        "info": "",
+        "x": 1120,
+        "y": 90,
+        "wires": []
+    },
+    {
+        "id": "656b5eef.519f5",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "EM STOP for RRF+SBC",
+        "info": "",
+        "x": 155,
+        "y": 495,
+        "wires": []
+    },
+    {
+        "id": "95605c76.945ce",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "EM STOP for RRF",
+        "info": "",
+        "x": 135,
+        "y": 555,
+        "wires": []
+    },
+    {
+        "id": "168e5529.5f80fb",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "PWR Control for Enc Heater",
+        "info": "",
+        "x": 165,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "5c2ab366.3117cc",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "PWR Control 3DP2",
+        "info": "",
+        "x": 135,
+        "y": 375,
+        "wires": []
+    },
+    {
+        "id": "e50cc17c.e5e98",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "PWR Control 3DP1",
+        "info": "",
+        "x": 135,
+        "y": 315,
+        "wires": []
+    },
+    {
+        "id": "2c6323d0.e8051c",
+        "type": "link in",
+        "z": "de2fd88b.8620a8",
+        "name": "SW_001_MQTT_IN",
+        "links": [
+            "7e474047.94376",
+            "8d072ea6.e1d2c"
+        ],
+        "x": 1425,
+        "y": 315,
+        "wires": [
+            [
+                "b10d031e.9885d"
+            ]
+        ]
+    },
+    {
+        "id": "d7f74565.f258f8",
+        "type": "link in",
+        "z": "de2fd88b.8620a8",
+        "name": "SW_002_MQTT_IN",
+        "links": [
+            "6b4cfa75.cae7a4",
+            "b629df4b.4a53d"
+        ],
+        "x": 1425,
+        "y": 375,
+        "wires": [
+            [
+                "4d361d7a.cfbf64"
+            ]
+        ]
+    },
+    {
+        "id": "6a722497.60734c",
+        "type": "link in",
+        "z": "de2fd88b.8620a8",
+        "name": "SW_003_MQTT_IN",
+        "links": [
+            "8b5055fe.e7bdc8"
+        ],
+        "x": 1425,
+        "y": 435,
+        "wires": [
+            [
+                "36fbbc34.f60484"
+            ]
+        ]
+    },
+    {
+        "id": "8b5055fe.e7bdc8",
+        "type": "link out",
+        "z": "de2fd88b.8620a8",
+        "name": "",
+        "links": [
+            "6a722497.60734c"
+        ],
+        "x": 1245,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "8d072ea6.e1d2c",
+        "type": "link out",
+        "z": "de2fd88b.8620a8",
+        "name": "",
+        "links": [
+            "2c6323d0.e8051c"
+        ],
+        "x": 1980,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "b629df4b.4a53d",
+        "type": "link out",
+        "z": "de2fd88b.8620a8",
+        "name": "Tas Skt 2",
+        "links": [
+            "d7f74565.f258f8"
+        ],
+        "x": 1755,
+        "y": 1410,
+        "wires": []
+    },
+    {
+        "id": "1ac066bd.bf5bd9",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP2 Safely shutdown RPi before pwr off",
+        "info": "",
+        "x": 175,
+        "y": 1305,
+        "wires": []
+    },
+    {
+        "id": "c74be87e.762578",
+        "type": "ui_ui_control",
+        "z": "de2fd88b.8620a8",
+        "name": "Change Tab",
+        "events": "change",
+        "x": 805,
+        "y": 135,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b26adc4.f98be4",
         "type": "ui_button",
-        "z": "7d46c6b9.9d9188",
-        "name": "MK2S EM STOP",
+        "z": "de2fd88b.8620a8",
+        "name": "Main menu",
+        "group": "85ca0704.c34e18",
+        "order": 2,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "label": "Main Menu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Red",
+        "icon": "fa-list-ol ",
+        "payload": "{\"tab\": \"Home Control Main Menu\"}",
+        "payloadType": "json",
+        "topic": "",
+        "x": 565,
+        "y": 135,
+        "wires": [
+            [
+                "c74be87e.762578"
+            ]
+        ]
+    },
+    {
+        "id": "8ff4cefd.9bbf7",
+        "type": "comment",
+        "z": "de2fd88b.8620a8",
+        "name": "README",
+        "info": "This flow seperates the comand to shutdown the RPI, from the command to turn off the power to the RPI.\n\nThis is because I use 1 RPI to drive both webcams for my two printers. Therefore I run the RPI with two power supplies (USB & GPIO) which turn on with each printer independently.\n\n3DP2 is running a duet 2 ethernet with paneldue\n3DP1 is running SKR 1.4 + SBC custom RRF (see gloomyandys git for more details)\n\nThe web calls to the API are different for each printer, as the API's respond to different commands\n(I do not know why??? but I am sure there is a good reason!)\n\nI do not use this version of the flow. \n\nThis flow has been abstracted from my larger home automation dashboard and altered to make it self contained. You should review all asptects of the flow before deployment/use. It is provided as an example only.\n\nIP addresses and usernames/passwords will need to be updated in the http & exec nodes to match your environment. Exec nodes to remotely shutdown RPI use SSHPASS.",
+        "x": 180,
+        "y": 1050,
+        "wires": []
+    },
+    {
+        "id": "e08fdbe4.4a54b8",
+        "type": "ui_button",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP1 EM STOP",
         "group": "52452535.e5876c",
         "order": 9,
         "width": 0,
@@ -1935,44 +1938,44 @@
         "color": "white",
         "bgcolor": "red",
         "icon": "fa-ban",
-        "payload": "Stop MK2S?",
+        "payload": "Stop 3DP1?",
         "payloadType": "str",
         "topic": "data",
-        "x": 1560,
-        "y": 180,
+        "x": 575,
+        "y": 495,
         "wires": [
             [
-                "f5021183.7b717"
+                "c5e2ffb4.145f9"
             ]
         ]
     },
     {
-        "id": "a7c12ef.302f0d",
+        "id": "56c9f3c5.5eefcc",
         "type": "http request",
-        "z": "7d46c6b9.9d9188",
-        "name": "MK2s EMSTOP",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP1 EMSTOP",
         "method": "POST",
         "ret": "obj",
         "paytoqs": "body",
-        "url": "http://10.66.1.52/machine/code/",
+        "url": "http://3DP1_IP/machine/code/",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 2450,
-        "y": 180,
+        "x": 1475,
+        "y": 495,
         "wires": [
             [
-                "52f2b922.9b0838"
+                "96356641.4ff538"
             ]
         ]
     },
     {
-        "id": "52f2b922.9b0838",
+        "id": "96356641.4ff538",
         "type": "debug",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "em",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1980,36 +1983,36 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2660,
-        "y": 180,
+        "x": 1685,
+        "y": 495,
         "wires": []
     },
     {
-        "id": "cecd2461.79a0d8",
+        "id": "66dce74c.d94838",
         "type": "http request",
-        "z": "7d46c6b9.9d9188",
-        "name": "TTSP EMSTOP",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP2 EMSTOP",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://10.66.1.55/rr_gcode?gcode=M112",
+        "url": "http://3DP2_IP/rr_gcode?gcode=M112",
         "tls": "",
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 2450,
-        "y": 255,
+        "x": 1295,
+        "y": 555,
         "wires": [
             [
-                "1fced7e0.d37d98"
+                "f7ef6af5.aef2e8"
             ]
         ]
     },
     {
-        "id": "3efa2d92.0f60e2",
+        "id": "ebe0ba36.26a5e8",
         "type": "ui_button",
-        "z": "7d46c6b9.9d9188",
-        "name": "TTSP EM STOP",
+        "z": "de2fd88b.8620a8",
+        "name": "3DP2 EM STOP",
         "group": "7ad2aae.9bd7054",
         "order": 9,
         "width": 0,
@@ -2020,23 +2023,23 @@
         "color": "white",
         "bgcolor": "red",
         "icon": "fa-ban",
-        "payload": "Stop TTS?",
+        "payload": "Stop 3DP2?",
         "payloadType": "str",
         "topic": "",
-        "x": 1550,
-        "y": 255,
+        "x": 575,
+        "y": 555,
         "wires": [
             [
-                "a7d2c03e.94541"
+                "7c8c5881.114198"
             ]
         ]
     },
     {
-        "id": "1fced7e0.d37d98",
+        "id": "f7ef6af5.aef2e8",
         "type": "debug",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "em2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2044,14 +2047,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2660,
-        "y": 255,
+        "x": 1460,
+        "y": 555,
         "wires": []
     },
     {
-        "id": "f5021183.7b717",
+        "id": "c5e2ffb4.145f9",
         "type": "ui_toast",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "position": "dialog",
         "displayTime": "3",
         "highlight": "",
@@ -2062,18 +2065,18 @@
         "raw": false,
         "topic": "Emergency Stop",
         "name": "CONFIRM",
-        "x": 1780,
-        "y": 180,
+        "x": 805,
+        "y": 495,
         "wires": [
             [
-                "5634193c.637fe8"
+                "f9285f96.527f6"
             ]
         ]
     },
     {
-        "id": "5634193c.637fe8",
+        "id": "f9285f96.527f6",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "STOP / CANCEL",
         "property": "payload",
         "propertyType": "msg",
@@ -2092,19 +2095,19 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 2040,
-        "y": 180,
+        "x": 1065,
+        "y": 495,
         "wires": [
             [
-                "36cf7531.9905ca"
+                "84a219d9.224de8"
             ],
             []
         ]
     },
     {
-        "id": "a7d2c03e.94541",
+        "id": "7c8c5881.114198",
         "type": "ui_toast",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "position": "dialog",
         "displayTime": "3",
         "highlight": "",
@@ -2115,18 +2118,18 @@
         "raw": false,
         "topic": "Emergency Stop",
         "name": "CONFIRM",
-        "x": 1780,
-        "y": 255,
+        "x": 805,
+        "y": 555,
         "wires": [
             [
-                "97a08fc.963e67"
+                "147d0d24.9e14e3"
             ]
         ]
     },
     {
-        "id": "97a08fc.963e67",
+        "id": "147d0d24.9e14e3",
         "type": "switch",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "STOP / CANCEL",
         "property": "payload",
         "propertyType": "msg",
@@ -2145,19 +2148,19 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 2040,
-        "y": 255,
+        "x": 1065,
+        "y": 555,
         "wires": [
             [
-                "cbdc3a1.7079dc8"
+                "66dce74c.d94838"
             ],
             []
         ]
     },
     {
-        "id": "36cf7531.9905ca",
+        "id": "84a219d9.224de8",
         "type": "change",
-        "z": "7d46c6b9.9d9188",
+        "z": "de2fd88b.8620a8",
         "name": "Set G Code",
         "rules": [
             {
@@ -2173,38 +2176,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2260,
-        "y": 180,
+        "x": 1285,
+        "y": 495,
         "wires": [
             [
-                "a7c12ef.302f0d"
-            ]
-        ]
-    },
-    {
-        "id": "cbdc3a1.7079dc8",
-        "type": "change",
-        "z": "7d46c6b9.9d9188",
-        "name": "Set G Code",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "M112",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2260,
-        "y": 255,
-        "wires": [
-            [
-                "cecd2461.79a0d8"
+                "56c9f3c5.5eefcc"
             ]
         ]
     },
@@ -2229,6 +2205,28 @@
         "disp": true,
         "width": "7",
         "collapse": true
+    },
+    {
+        "id": "22518fa6.b7642",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "OpenHab Local Broker",
+        "broker": "10.66.1.51",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
     },
     {
         "id": "85ca0704.c34e18",
