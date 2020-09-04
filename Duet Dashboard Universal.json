@@ -1,0 +1,1688 @@
+[
+    {
+        "id": "bd899e89.4cc2d",
+        "type": "tab",
+        "label": "Duet Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "752ba823.038208",
+        "type": "ui_template",
+        "z": "bd899e89.4cc2d",
+        "group": "dfa9a869.693b98",
+        "name": "Web Cam",
+        "order": 4,
+        "width": "7",
+        "height": "4",
+        "format": "<!DOCTYPE html>  \n<html>  \n    <head>  \n        <style> \n            .geeks { \n                width:100%; \n                height:100%px; \n            } \n            img { \n                width:100%; \n                height:100%; \n            } \n        </style> \n    </head>  \n    <body> \n        <div class = \"geeks\"> \n            <img src= \"{{(msg.payload)}}\"></img>\n        </div> \n    </body>  \n</html> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 300,
+        "y": 555,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a95feec4.52185",
+        "type": "ui_button",
+        "z": "bd899e89.4cc2d",
+        "name": "EM STOP",
+        "group": "dfa9a869.693b98",
+        "order": 6,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "label": "Emergency Stop",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "red",
+        "icon": "fa-ban",
+        "payload": "Stop Printing?",
+        "payloadType": "str",
+        "topic": "data",
+        "x": 300,
+        "y": 315,
+        "wires": [
+            [
+                "fa1c3a8.9c34dc8"
+            ]
+        ]
+    },
+    {
+        "id": "fa1c3a8.9c34dc8",
+        "type": "ui_toast",
+        "z": "bd899e89.4cc2d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "STOP",
+        "cancel": "CANCEL",
+        "raw": false,
+        "topic": "Emergency Stop",
+        "name": "CONFIRM",
+        "x": 520,
+        "y": 315,
+        "wires": [
+            [
+                "8c715ac8.daa5d8"
+            ]
+        ]
+    },
+    {
+        "id": "397d973f.ce54a8",
+        "type": "switch",
+        "z": "bd899e89.4cc2d",
+        "name": "STOP / CANCEL",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "STOP",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "CANCEL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 975,
+        "wires": [
+            [
+                "67ec3299.8c91cc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9b20015c.5d7d4",
+        "type": "change",
+        "z": "bd899e89.4cc2d",
+        "name": "Set G Code",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "M112",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 1020,
+        "wires": [
+            [
+                "59413bf6.e0b7f4"
+            ]
+        ]
+    },
+    {
+        "id": "59413bf6.e0b7f4",
+        "type": "http request",
+        "z": "bd899e89.4cc2d",
+        "name": "EMSTOP",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "body",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1560,
+        "y": 1020,
+        "wires": [
+            [
+                "3440f423.ca728c"
+            ]
+        ]
+    },
+    {
+        "id": "c3e1ec03.3d8d2",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "em",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2195,
+        "y": 975,
+        "wires": []
+    },
+    {
+        "id": "36511bbb.3e45a4",
+        "type": "ui_gauge",
+        "z": "bd899e89.4cc2d",
+        "name": "Tool Temp",
+        "group": "dfa9a869.693b98",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "gtype": "gage",
+        "title": "{{msg.label}}",
+        "label": "celsius",
+        "format": "{{value}}",
+        "min": "50",
+        "max": "300",
+        "colors": [
+            "#0080c0",
+            "#00ff00",
+            "#ca3838"
+        ],
+        "seg1": "160",
+        "seg2": "285",
+        "x": 310,
+        "y": 375,
+        "wires": []
+    },
+    {
+        "id": "f8bd89cc.d3eb58",
+        "type": "ui_gauge",
+        "z": "bd899e89.4cc2d",
+        "name": "Bed Temp",
+        "group": "dfa9a869.693b98",
+        "order": 3,
+        "width": "3",
+        "height": "2",
+        "gtype": "gage",
+        "title": "{{msg.label}}",
+        "label": "celsius",
+        "format": "{{value}}",
+        "min": "50",
+        "max": "110",
+        "colors": [
+            "#0080c0",
+            "#00ff00",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "85",
+        "x": 300,
+        "y": 495,
+        "wires": []
+    },
+    {
+        "id": "98f054ac.a052c8",
+        "type": "ui_text",
+        "z": "bd899e89.4cc2d",
+        "group": "dfa9a869.693b98",
+        "order": 2,
+        "width": "1",
+        "height": "2",
+        "name": "FAN",
+        "label": "FAN",
+        "format": "{{msg.payload}}%",
+        "layout": "col-center",
+        "x": 290,
+        "y": 435,
+        "wires": []
+    },
+    {
+        "id": "57baa264.346b1c",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Tool Gage In",
+        "links": [
+            "8446fcde.fd55c",
+            "d91441da.e90d8"
+        ],
+        "x": 165,
+        "y": 375,
+        "wires": [
+            [
+                "36511bbb.3e45a4"
+            ]
+        ]
+    },
+    {
+        "id": "26977503.32e4fa",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Fan Speed In",
+        "links": [
+            "934898fa.560c08",
+            "acdb6686.6bf8a8"
+        ],
+        "x": 165,
+        "y": 435,
+        "wires": [
+            [
+                "98f054ac.a052c8"
+            ]
+        ]
+    },
+    {
+        "id": "63b49225.cf471c",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Bed Gage In",
+        "links": [
+            "169370e5.9f56bf",
+            "36c33ab8.9e3ba6"
+        ],
+        "x": 165,
+        "y": 495,
+        "wires": [
+            [
+                "f8bd89cc.d3eb58"
+            ]
+        ]
+    },
+    {
+        "id": "8c9dbf93.f056b",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Web Cam In",
+        "links": [
+            "5a574141.6d783"
+        ],
+        "x": 165,
+        "y": 555,
+        "wires": [
+            [
+                "752ba823.038208"
+            ]
+        ]
+    },
+    {
+        "id": "8c715ac8.daa5d8",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "EM Stop Out",
+        "links": [
+            "1666da64.839926"
+        ],
+        "x": 720,
+        "y": 315,
+        "wires": []
+    },
+    {
+        "id": "1666da64.839926",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "EM Stop In",
+        "links": [
+            "8c715ac8.daa5d8"
+        ],
+        "x": 285,
+        "y": 975,
+        "wires": [
+            [
+                "397d973f.ce54a8"
+            ]
+        ]
+    },
+    {
+        "id": "1a2ba700.21f119",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Dashboard Gui - Readme",
+        "info": "You must assign each of these nodes to a dashboard tab/group in the Dashboard configuration screen",
+        "x": 260,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b13d57ac.0a2cd8",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Emergency Stop Nodes",
+        "info": "",
+        "x": 370,
+        "y": 915,
+        "wires": []
+    },
+    {
+        "id": "168f84e2.c3064b",
+        "type": "inject",
+        "z": "bd899e89.4cc2d",
+        "name": "SET WEBCAM ADDRESS IN HERE",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "http://10.66.1.52:8082",
+        "payloadType": "str",
+        "x": 325,
+        "y": 60,
+        "wires": [
+            [
+                "5a574141.6d783"
+            ]
+        ]
+    },
+    {
+        "id": "5a574141.6d783",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "Web Cam Addr Out",
+        "links": [
+            "8c9dbf93.f056b"
+        ],
+        "x": 780,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a0384da1.1fbd",
+        "type": "inject",
+        "z": "bd899e89.4cc2d",
+        "name": "SET PRINTER IP ADDRESS IN HERE",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.4",
+        "topic": "",
+        "payload": "10.66.1.55",
+        "payloadType": "str",
+        "x": 326,
+        "y": 150,
+        "wires": [
+            [
+                "18aea4af.a96bfb"
+            ]
+        ]
+    },
+    {
+        "id": "68b86142.b09ab",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "b4d07884.eec4c8"
+        ],
+        "x": 780,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "18aea4af.a96bfb",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set 3D Printer IP",
+        "func": "msg.DuetIP = msg.payload;\nflow.set(\"DuetIP\", msg.payload);\nflow.set(\"LastDuetStatus\", false);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 615,
+        "y": 150,
+        "wires": [
+            [
+                "68b86142.b09ab"
+            ]
+        ]
+    },
+    {
+        "id": "b0eb8f52.dba3",
+        "type": "inject",
+        "z": "bd899e89.4cc2d",
+        "name": "Ping Duet",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1090,
+        "y": 120,
+        "wires": [
+            [
+                "886bd6c1.95fc18"
+            ]
+        ]
+    },
+    {
+        "id": "4d559852.c046e8",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Set the flow variables",
+        "info": "",
+        "x": 625,
+        "y": 105,
+        "wires": []
+    },
+    {
+        "id": "4235ccd0.603934",
+        "type": "conf ping",
+        "z": "bd899e89.4cc2d",
+        "name": "Ping Duet Printer",
+        "host": "",
+        "timeout": "5",
+        "requests": "1",
+        "x": 1620,
+        "y": 120,
+        "wires": [
+            [
+                "a05a4e79.bfb7d",
+                "c3c29ff0.8a2f4"
+            ]
+        ]
+    },
+    {
+        "id": "886bd6c1.95fc18",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Get DuetIP",
+        "func": "msg.host = flow.get(\"DuetIP\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1360,
+        "y": 120,
+        "wires": [
+            [
+                "4235ccd0.603934"
+            ]
+        ]
+    },
+    {
+        "id": "c3c29ff0.8a2f4",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "Ping Results",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1615,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a05a4e79.bfb7d",
+        "type": "switch",
+        "z": "bd899e89.4cc2d",
+        "name": "Is Online?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1860,
+        "y": 120,
+        "wires": [
+            [
+                "e01b1b3.87c3ae8"
+            ],
+            [
+                "769a6b3d.eb0244"
+            ]
+        ]
+    },
+    {
+        "id": "769a6b3d.eb0244",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Duet Status True",
+        "func": "flow.set(\"DuetLive\", true);\nmsg.payload = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2125,
+        "y": 150,
+        "wires": [
+            [
+                "1bf0f071.48374",
+                "118a6935.9b41b7"
+            ]
+        ]
+    },
+    {
+        "id": "e01b1b3.87c3ae8",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Duet Status False",
+        "func": "flow.set(\"DuetLive\", false);\nmsg.payload = false;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2125,
+        "y": 90,
+        "wires": [
+            [
+                "1bf0f071.48374",
+                "118a6935.9b41b7"
+            ]
+        ]
+    },
+    {
+        "id": "5539ba44.a57c24",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "STEP 1 : Check Duet is live on LAN and set flow var",
+        "info": "",
+        "x": 1180,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1bf0f071.48374",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "Online Status Out",
+        "links": [
+            "8d5f31a7.bc19"
+        ],
+        "x": 2290,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8d5f31a7.bc19",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Start Updates",
+        "links": [
+            "1bf0f071.48374"
+        ],
+        "x": 1005,
+        "y": 270,
+        "wires": [
+            [
+                "23e44063.3b685"
+            ]
+        ]
+    },
+    {
+        "id": "18816855.56ede8",
+        "type": "switch",
+        "z": "bd899e89.4cc2d",
+        "name": "Start ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1375,
+        "y": 270,
+        "wires": [
+            [
+                "f6c6cd21.d9bdf"
+            ],
+            [
+                "af4fa0e8.bb703"
+            ]
+        ]
+    },
+    {
+        "id": "8ba5d750.84d7a8",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "Stop Updating",
+        "links": [
+            "216ddbe3.56d944"
+        ],
+        "x": 1700,
+        "y": 225,
+        "wires": []
+    },
+    {
+        "id": "f6c6cd21.d9bdf",
+        "type": "change",
+        "z": "bd899e89.4cc2d",
+        "name": "STOP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "STOP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1530,
+        "y": 225,
+        "wires": [
+            [
+                "8ba5d750.84d7a8"
+            ]
+        ]
+    },
+    {
+        "id": "23e44063.3b685",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Check for Status Change",
+        "func": "//this function filters the flow to only run on a status change.\nvar LastStatus = flow.get(\"LastDuetStatus\");\n//check if LastStatus has been set before\nif(LastStatus === undefined) {\n    flow.set(\"LastDuetStatus\", msg.payload);\n    return msg;\n} else {\n    //check if status has changed since last ping of device\n    if (LastStatus != msg.payload) {\n        flow.set(\"LastDuetStatus\", msg.payload);\n        return msg;\n    }\n}\n//if LastStatus has not changed then no msg will be passed",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1165,
+        "y": 270,
+        "wires": [
+            [
+                "18816855.56ede8",
+                "81c94fa1.33fdf"
+            ]
+        ]
+    },
+    {
+        "id": "14266052.12e4a",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "Start Updates Out",
+        "links": [
+            "6cf2b699.530618"
+        ],
+        "x": 1700,
+        "y": 315,
+        "wires": []
+    },
+    {
+        "id": "af4fa0e8.bb703",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Get Printer IP",
+        "func": "msg.DuetIP = flow.get(\"DuetIP\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1555,
+        "y": 315,
+        "wires": [
+            [
+                "14266052.12e4a"
+            ]
+        ]
+    },
+    {
+        "id": "6161b083.7ff27",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "STEP 2 : Conditional check to start / stop updates to dashboard",
+        "info": "",
+        "x": 1225,
+        "y": 210,
+        "wires": []
+    },
+    {
+        "id": "6cf2b699.530618",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "Check API Type IN",
+        "links": [
+            "14266052.12e4a"
+        ],
+        "x": 1005,
+        "y": 465,
+        "wires": [
+            [
+                "60455503.ce864c"
+            ]
+        ]
+    },
+    {
+        "id": "a7196341.a3455",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "STEP 3 : Check which API version is needed",
+        "info": "",
+        "x": 1165,
+        "y": 405,
+        "wires": []
+    },
+    {
+        "id": "7181d0e4.056ad",
+        "type": "http request",
+        "z": "bd899e89.4cc2d",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1410,
+        "y": 465,
+        "wires": [
+            [
+                "785ffaba.900a74",
+                "afed1d20.5b884"
+            ]
+        ]
+    },
+    {
+        "id": "60455503.ce864c",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Generate URL",
+        "func": "msg.url = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1160,
+        "y": 465,
+        "wires": [
+            [
+                "7181d0e4.056ad"
+            ]
+        ]
+    },
+    {
+        "id": "afed1d20.5b884",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "Check API Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1705,
+        "y": 375,
+        "wires": []
+    },
+    {
+        "id": "f3ba2079.b4b4a",
+        "type": "inject",
+        "z": "bd899e89.4cc2d",
+        "name": "Set True",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1860,
+        "y": 180,
+        "wires": [
+            [
+                "769a6b3d.eb0244"
+            ]
+        ]
+    },
+    {
+        "id": "9e01999.d7fb768",
+        "type": "inject",
+        "z": "bd899e89.4cc2d",
+        "name": "Set False",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1860,
+        "y": 60,
+        "wires": [
+            [
+                "e01b1b3.87c3ae8"
+            ]
+        ]
+    },
+    {
+        "id": "81c94fa1.33fdf",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "Status Change",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1355,
+        "y": 330,
+        "wires": []
+    },
+    {
+        "id": "118a6935.9b41b7",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "is live",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2465,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "785ffaba.900a74",
+        "type": "switch",
+        "z": "bd899e89.4cc2d",
+        "name": "API Type",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "404",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1655,
+        "y": 465,
+        "wires": [
+            [
+                "1c68b2ab.d4722d"
+            ],
+            [
+                "a1572560.4a7b48"
+            ]
+        ]
+    },
+    {
+        "id": "1c68b2ab.d4722d",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set API Type 2",
+        "func": "flow.set(\"DuetAPIVersion\", 2)\nmsg.DuetAPIVer = 2\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1855,
+        "y": 420,
+        "wires": [
+            [
+                "2ad6484f.1dd5c8"
+            ]
+        ]
+    },
+    {
+        "id": "a1572560.4a7b48",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set API Type 1",
+        "func": "flow.set(\"DuetAPIVersion\", 1)\nmsg.DuetAPIVer = 1\nreturn msg;\n\n//1 is old 2 is new",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1855,
+        "y": 495,
+        "wires": [
+            [
+                "18b6da46.ba9ac6"
+            ]
+        ]
+    },
+    {
+        "id": "2ad6484f.1dd5c8",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set API Type 2 Paths",
+        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.result.heat.heaters[1].current\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.result.heat.heaters[1].active\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.result.heat.heaters[1].standby\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.result.heat.heaters[1].max\");\nflow.set (\"ToolStatusPath\", \"msg.payload.result.heat.heaters[1].state\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.result.heat.heaters[0].current\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.result.heat.heaters[0].active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.result.heat.heaters[0].standby\");\nflow.set (\"MaxBedTempPath\", \"msg.payload.result.heat.heaters[0].max\");\nflow.set (\"BedStatusPath\", \"msg.payload.result.heat.heaters[0].state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.result.fans[0].actualValue\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2130,
+        "y": 420,
+        "wires": [
+            [
+                "f91cc299.b61ec"
+            ]
+        ]
+    },
+    {
+        "id": "18b6da46.ba9ac6",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set API Type 1 Paths",
+        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.temps.current[1]\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.temps.tools.active[0][0]\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.temps.tools.standby[0][0]\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.tempLimit\");\nflow.set (\"ToolStatusPath\", \"msg.payload.temps.state[1]\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.temps.current[0]\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.temps.bed.active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.temps.bed.standby\");\nflow.set (\"BedStatusPath\", \"msg.payload.temps.bed.state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.params.fanPercent[0]\");\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2130,
+        "y": 495,
+        "wires": [
+            [
+                "f91cc299.b61ec"
+            ]
+        ]
+    },
+    {
+        "id": "f91cc299.b61ec",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "52c7b6a8.a9d9c8"
+        ],
+        "x": 2325,
+        "y": 450,
+        "wires": []
+    },
+    {
+        "id": "52c7b6a8.a9d9c8",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "f91cc299.b61ec"
+        ],
+        "x": 285,
+        "y": 780,
+        "wires": [
+            [
+                "3a87e4ee.c88a5c"
+            ]
+        ]
+    },
+    {
+        "id": "3a87e4ee.c88a5c",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Generate URL for API Version",
+        "func": "if (msg.DuetAPIVer == 1){\n    msg.url = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\n} else {\n    msg.url = \"http://\" + msg.DuetIP + \"/machine/status\";\n}\nmsg.requestTimeout = 4000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "47171098.65e9c"
+            ]
+        ]
+    },
+    {
+        "id": "47171098.65e9c",
+        "type": "http request",
+        "z": "bd899e89.4cc2d",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 775,
+        "y": 780,
+        "wires": [
+            [
+                "e38910e0.a4ac6",
+                "9481accd.1bb49",
+                "7d90ab79.fdb2b4",
+                "4105ae04.419a1"
+            ]
+        ]
+    },
+    {
+        "id": "e38910e0.a4ac6",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Tool Gage Initial Parameters",
+        "func": "var CurrToolTemp = eval(flow.get(\"CurrToolTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveToolTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyToolTempPath\"));\nvar MaxToolTemp = eval(flow.get(\"MaxToolTempPath\"));\nvar ToolStatus = eval(flow.get(\"ToolStatusPath\"));\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"T0: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"T0: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"T0: off\";\n} \n\nmsg.ui_control = {min:0,\n                max:Math.round(MaxToolTemp),\n                seg1:139,\n                seg2:(Math.round(MaxToolTemp) - 15),\n                colors:[\"blue\",\"green\",\"red\"],\n                gtype:\"gage\"};\n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1090,
+        "y": 645,
+        "wires": [
+            [
+                "8446fcde.fd55c"
+            ]
+        ]
+    },
+    {
+        "id": "8446fcde.fd55c",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "57baa264.346b1c"
+        ],
+        "x": 1290,
+        "y": 645,
+        "wires": []
+    },
+    {
+        "id": "9481accd.1bb49",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Bed Gage Initial Parameters",
+        "func": "var CurrToolTemp = eval(flow.get(\"CurrBedTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveBedTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyBedTempPath\"));\nvar MaxToolTemp;\nvar ToolStatus = eval(flow.get(\"BedStatusPath\"));\n\n//V1 of API does not pass back a max bed temp value so set it to 120\nif (msg.DuetAPIVer == 1){\n    MaxToolTemp = 120\n} else {\n    MaxToolTemp = eval(flow.get(\"MaxBedTempPath\"));\n}\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"BED: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"BED: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"BED: off\";\n} \n\nmsg.ui_control = {min:0,\n                max:Math.round(MaxToolTemp),\n                seg1:49,\n                seg2:(Math.round(MaxToolTemp) - 5),\n                colors:[\"blue\",\"green\",\"red\"],\n                gtype:\"gage\"};\n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1090,
+        "y": 690,
+        "wires": [
+            [
+                "169370e5.9f56bf"
+            ]
+        ]
+    },
+    {
+        "id": "169370e5.9f56bf",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "63b49225.cf471c"
+        ],
+        "x": 1290,
+        "y": 690,
+        "wires": []
+    },
+    {
+        "id": "7d90ab79.fdb2b4",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Initial Fan Speed",
+        "func": "var FanSpeed = eval(flow.get(\"FanSpeedPath\"));\n\nif (FanSpeed >= 0.01){\n    //API v1 returns a value between 0-100 API v2 returns a value between .01-1\n    //so we need to normalise the values \n    if (msg.DuetAPIVer == 2) {\n        msg.payload = FanSpeed * 100;\n    } else {\n        msg.payload = FanSpeed;\n    }\n} else {msg.payload = 0;}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1060,
+        "y": 735,
+        "wires": [
+            [
+                "934898fa.560c08"
+            ]
+        ]
+    },
+    {
+        "id": "934898fa.560c08",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "26977503.32e4fa"
+        ],
+        "x": 1290,
+        "y": 735,
+        "wires": []
+    },
+    {
+        "id": "c250b4d9.c62718",
+        "type": "delay",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1215,
+        "y": 780,
+        "wires": [
+            [
+                "98da945.cc6c068"
+            ]
+        ]
+    },
+    {
+        "id": "216ddbe3.56d944",
+        "type": "link in",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "8ba5d750.84d7a8"
+        ],
+        "x": 1275,
+        "y": 855,
+        "wires": [
+            [
+                "98da945.cc6c068"
+            ]
+        ]
+    },
+    {
+        "id": "698468b6.679868",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Fan Speed",
+        "func": "var FanSpeed = eval(flow.get(\"FanSpeedPath\"));\n\nif (FanSpeed >= 0.01){\n    //API v1 returns a value between 0-100 API v2 returns a value between .01-1\n    //so we need to normalise the values \n    if (msg.DuetAPIVer == 2) {\n        msg.payload = FanSpeed * 100;\n    } else {\n        msg.payload = FanSpeed;\n    }\n} else {msg.payload = 0;}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2000,
+        "y": 825,
+        "wires": [
+            [
+                "acdb6686.6bf8a8"
+            ]
+        ]
+    },
+    {
+        "id": "80487991.c394d8",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Bed Gage Values",
+        "func": "var CurrToolTemp = eval(flow.get(\"CurrBedTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveBedTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyBedTempPath\"));\nvar MaxToolTemp;\nvar ToolStatus = eval(flow.get(\"BedStatusPath\"));\n\n//V1 of API does not pass back a max bed temp value so set it to 120\nif (msg.DuetAPIVer == 1){\n    MaxToolTemp = 120\n} else {\n    MaxToolTemp = eval(flow.get(\"MaxToolBedPath\"));\n}\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"BED: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"BED: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"BED: off\";\n} \n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2020,
+        "y": 780,
+        "wires": [
+            [
+                "36c33ab8.9e3ba6"
+            ]
+        ]
+    },
+    {
+        "id": "b43d32bc.2e718",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Tool Gage Values",
+        "func": "var CurrToolTemp = eval(flow.get(\"CurrToolTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveToolTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyToolTempPath\"));\nvar MaxToolTemp = eval(flow.get(\"MaxToolTempPath\"));\nvar ToolStatus = eval(flow.get(\"ToolStatusPath\"));\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"T0: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"T0: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"T0: off\";\n} \n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2020,
+        "y": 735,
+        "wires": [
+            [
+                "d91441da.e90d8"
+            ]
+        ]
+    },
+    {
+        "id": "d91441da.e90d8",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "57baa264.346b1c"
+        ],
+        "x": 2265,
+        "y": 735,
+        "wires": []
+    },
+    {
+        "id": "36c33ab8.9e3ba6",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "63b49225.cf471c"
+        ],
+        "x": 2265,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "acdb6686.6bf8a8",
+        "type": "link out",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "links": [
+            "26977503.32e4fa"
+        ],
+        "x": 2265,
+        "y": 825,
+        "wires": []
+    },
+    {
+        "id": "1bda2d04.689df3",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Set the gauge ranges (only once)",
+        "info": "",
+        "x": 1090,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "7a1cdeb8.371d2",
+        "type": "http request",
+        "z": "bd899e89.4cc2d",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1690,
+        "y": 780,
+        "wires": [
+            [
+                "b43d32bc.2e718",
+                "80487991.c394d8",
+                "698468b6.679868",
+                "781f02fb.0c4d3c"
+            ]
+        ]
+    },
+    {
+        "id": "781f02fb.0c4d3c",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "Full Duet Status Query Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2060,
+        "y": 690,
+        "wires": []
+    },
+    {
+        "id": "2dfb2b96.843f84",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Main Dashboard Status Update nodes",
+        "info": "",
+        "x": 420,
+        "y": 735,
+        "wires": []
+    },
+    {
+        "id": "9d3308e7.46b4d8",
+        "type": "switch",
+        "z": "bd899e89.4cc2d",
+        "name": "API Version Check",
+        "property": "DuetAPIVer",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 975,
+        "wires": [
+            [
+                "f97fefdf.cdc8a"
+            ],
+            [
+                "cd22b107.55546"
+            ]
+        ]
+    },
+    {
+        "id": "c87702a1.78653",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Set the duet response paths for the values needed",
+        "info": "",
+        "x": 2215,
+        "y": 375,
+        "wires": []
+    },
+    {
+        "id": "119cfefb.22e941",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Add more values by adding paths (Readme)",
+        "info": "By activating \"Full Duet Status Query Response\" debug node you will get access to the full return from duet. Here you can work out the paths you need for the values you want to get from the Duet.\n\nAdding these paths to the \"Set API Type x Paths\" function node(s) will allow you to add more items to the dashboard.\n\n",
+        "x": 2195,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "cd22b107.55546",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Generate URL",
+        "func": "msg.url = \"http://\" + msg.DuetIP + \"/machine/code/\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1145,
+        "y": 1020,
+        "wires": [
+            [
+                "9b20015c.5d7d4"
+            ]
+        ]
+    },
+    {
+        "id": "f97fefdf.cdc8a",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Generate URL",
+        "func": "msg.url = \"http://\" + msg.DuetIP + \"/rr_gcode?gcode=M112\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1145,
+        "y": 930,
+        "wires": [
+            [
+                "aa668c3d.84762"
+            ]
+        ]
+    },
+    {
+        "id": "67ec3299.8c91cc",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Get Printer & Flow Values",
+        "func": "msg.DuetAPIVer = flow.get(\"DuetAPIVersion\");\nmsg.DuetIP = flow.get(\"DuetIP\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 695,
+        "y": 975,
+        "wires": [
+            [
+                "9d3308e7.46b4d8"
+            ]
+        ]
+    },
+    {
+        "id": "aa668c3d.84762",
+        "type": "change",
+        "z": "bd899e89.4cc2d",
+        "name": "Set G Code",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "M112",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 930,
+        "wires": [
+            [
+                "90f76e0.05afd9"
+            ]
+        ]
+    },
+    {
+        "id": "90f76e0.05afd9",
+        "type": "http request",
+        "z": "bd899e89.4cc2d",
+        "name": "EMSTOP",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1560,
+        "y": 930,
+        "wires": [
+            [
+                "3440f423.ca728c"
+            ]
+        ]
+    },
+    {
+        "id": "f83bf371.e5ecd",
+        "type": "function",
+        "z": "bd899e89.4cc2d",
+        "name": "Set Status False",
+        "func": "flow.set(\"DuetLive\", false);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2000,
+        "y": 975,
+        "wires": [
+            [
+                "c3e1ec03.3d8d2"
+            ]
+        ]
+    },
+    {
+        "id": "3440f423.ca728c",
+        "type": "delay",
+        "z": "bd899e89.4cc2d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "15",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1800,
+        "y": 975,
+        "wires": [
+            [
+                "f83bf371.e5ecd"
+            ]
+        ]
+    },
+    {
+        "id": "3fa53f4d.12055",
+        "type": "comment",
+        "z": "bd899e89.4cc2d",
+        "name": "Mitigation against status updates stopping",
+        "info": "",
+        "x": 1910,
+        "y": 930,
+        "wires": []
+    },
+    {
+        "id": "98da945.cc6c068",
+        "type": "looptimer2",
+        "z": "bd899e89.4cc2d",
+        "duration": "5",
+        "units": "Second",
+        "maxloops": "10000",
+        "maxtimeout": "96",
+        "maxtimeoutunits": "Hour",
+        "name": "",
+        "x": 1415,
+        "y": 780,
+        "wires": [
+            [
+                "7a1cdeb8.371d2",
+                "11fed9c0.8542f6"
+            ],
+            [
+                "11fed9c0.8542f6"
+            ]
+        ]
+    },
+    {
+        "id": "11fed9c0.8542f6",
+        "type": "debug",
+        "z": "bd899e89.4cc2d",
+        "name": "Loop Check",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 735,
+        "wires": []
+    },
+    {
+        "id": "4105ae04.419a1",
+        "type": "change",
+        "z": "bd899e89.4cc2d",
+        "name": "Clear Status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 780,
+        "wires": [
+            [
+                "c250b4d9.c62718"
+            ]
+        ]
+    },
+    {
+        "id": "dfa9a869.693b98",
+        "type": "ui_group",
+        "z": "",
+        "name": "3DP 1 Status",
+        "tab": "bba70658.7faa28",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": true
+    },
+    {
+        "id": "bba70658.7faa28",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Duet Dashboard",
+        "icon": "dashboard",
+        "order": 26,
+        "disabled": false,
+        "hidden": false
+    }
+]
