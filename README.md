@@ -2,7 +2,7 @@
 
 This is a simple mobile formatted node red dashboard that can be used to monitor Duet RRF based printers running Duet Web Control.
 
-![3D Printer Dashboard](printerdash.jpg)
+![3D Printer Dashboard](printerdash2.jpg)
 
 
 
