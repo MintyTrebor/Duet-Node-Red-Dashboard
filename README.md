@@ -8,12 +8,12 @@ This is a simple mobile formatted node red dashboard that can be used to monitor
 
 
 The "Duet Dashboard Universal.json" is a deployable example which has been designed to automatically detect the Duet API version required to talk with the 3D Printer.
-To get this working in your node-red instance the following steps are needed.
+To get this working in your node-red instance the following steps are needed.  
 
-Install into your palette:
-    * node-red-contrib-looptimer2
-    * node-red-configurable-ping
-    * node-red-dashboard (see http://flows.nodered.org/node/node-red-dashboard for usage instructions)
+Install into your palette:  
+    * node-red-contrib-looptimer2  
+    * node-red-configurable-ping  
+    * node-red-dashboard (see http://flows.nodered.org/node/node-red-dashboard for usage instructions)  
 
 Within the flow update the 2 inject nodes with the printer and web cam information requested.
 
