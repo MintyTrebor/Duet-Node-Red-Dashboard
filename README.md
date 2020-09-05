@@ -43,4 +43,7 @@ Two different methods for getting the data from the Duet RRF are to accomodate t
 The flows are not optimised.
 
 
-This is only provided for reference purposes. You should review everything before deployment.
+This is only provided for reference purposes. You should review everything before deployment.  
+
+A short instructional video:  
+[![Node-Red Duet Dash](https://youtu.be/h_kTPOJejQE "Node-Red Duet Dash")
