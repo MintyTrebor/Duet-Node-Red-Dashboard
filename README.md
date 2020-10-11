@@ -25,7 +25,7 @@ Assign the Dashboard GUI nodes to your dashboard group configuration.
 *************************
 
 
-The other example flow is for refernce purposes only, and will require much more work to deploy in your environment, it demonstrates the following functions:  
+The other example flow is for refernce purposes only, includes extra nodes from the palette manager, and will require much more work to deploy in your environment, it demonstrates the following functions:  
 
 * Powers on a RPi & 3d Printer(s) via MQTT and a tasmota wifi pwr socket(s).  
 * Queries 2 3d Printers (with 2 different duet api versions) for status information every 15 seconds including:  
@@ -37,8 +37,12 @@ The other example flow is for refernce purposes only, and will require much more
 * Safely shutsdown the RPi remotely using "sshpass" to remotely send shutdown command to the RPi (you will need to change this cmd to meet your environments details)  
 * Emergency Stop Button
 
+************************
 Notes:  
 Two different methods for getting the data from the Duet RRF are to accomodate the version diffferences between 2 Duet API Versions.
+
+Note 2:
+Recently DSF has updated the api, which has removed "result" from the returned object model. If you are on this newer (currently beta) version you will need to edit the node ["Set API Type 2 Paths"] and remove "result" from the paths in the code. For example: "msg.payload.result.heat.heaters[1].current" would become "msg.payload.heat.heaters[1].current".
 
 The flows are not optimised.
 
