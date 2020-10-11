@@ -1,16 +1,16 @@
 [
     {
-        "id": "bd899e89.4cc2d",
+        "id": "af9cf391.fd50a",
         "type": "tab",
         "label": "Duet Dashboard",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "752ba823.038208",
+        "id": "85921641.1de008",
         "type": "ui_template",
-        "z": "bd899e89.4cc2d",
-        "group": "dfa9a869.693b98",
+        "z": "af9cf391.fd50a",
+        "group": "c284f5ba.1ce698",
         "name": "Web Cam",
         "order": 4,
         "width": "7",
@@ -27,11 +27,11 @@
         ]
     },
     {
-        "id": "a95feec4.52185",
+        "id": "3a212bb2.ae6824",
         "type": "ui_button",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "EM STOP",
-        "group": "dfa9a869.693b98",
+        "group": "c284f5ba.1ce698",
         "order": 6,
         "width": "5",
         "height": "1",
@@ -48,14 +48,14 @@
         "y": 315,
         "wires": [
             [
-                "fa1c3a8.9c34dc8"
+                "431b378.0170ec8"
             ]
         ]
     },
     {
-        "id": "fa1c3a8.9c34dc8",
+        "id": "431b378.0170ec8",
         "type": "ui_toast",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "position": "dialog",
         "displayTime": "3",
         "highlight": "",
@@ -70,14 +70,14 @@
         "y": 315,
         "wires": [
             [
-                "8c715ac8.daa5d8"
+                "6847d56b.d9b88c"
             ]
         ]
     },
     {
-        "id": "397d973f.ce54a8",
+        "id": "e54d57b6.d65398",
         "type": "switch",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "STOP / CANCEL",
         "property": "payload",
         "propertyType": "msg",
@@ -96,19 +96,19 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 450,
-        "y": 975,
+        "x": 270,
+        "y": 1280,
         "wires": [
             [
-                "67ec3299.8c91cc"
+                "3196606e.a15a8"
             ],
             []
         ]
     },
     {
-        "id": "9b20015c.5d7d4",
+        "id": "f99d2e31.c9d7b",
         "type": "change",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set G Code",
         "rules": [
             {
@@ -124,18 +124,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1360,
-        "y": 1020,
+        "x": 1180,
+        "y": 1325,
         "wires": [
             [
-                "59413bf6.e0b7f4"
+                "34ee0c51.4808f4"
             ]
         ]
     },
     {
-        "id": "59413bf6.e0b7f4",
+        "id": "34ee0c51.4808f4",
         "type": "http request",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "EMSTOP",
         "method": "POST",
         "ret": "obj",
@@ -145,18 +145,18 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1560,
-        "y": 1020,
+        "x": 1380,
+        "y": 1325,
         "wires": [
             [
-                "3440f423.ca728c"
+                "b292969f.c71348"
             ]
         ]
     },
     {
-        "id": "c3e1ec03.3d8d2",
+        "id": "3d34b1e1.52b5ae",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "em",
         "active": false,
         "tosidebar": true,
@@ -166,16 +166,16 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2195,
-        "y": 975,
+        "x": 2015,
+        "y": 1280,
         "wires": []
     },
     {
-        "id": "36511bbb.3e45a4",
+        "id": "b888b562.eb8fa8",
         "type": "ui_gauge",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Tool Temp",
-        "group": "dfa9a869.693b98",
+        "group": "c284f5ba.1ce698",
         "order": 1,
         "width": "3",
         "height": "2",
@@ -197,11 +197,11 @@
         "wires": []
     },
     {
-        "id": "f8bd89cc.d3eb58",
+        "id": "2d283551.fbbe0a",
         "type": "ui_gauge",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Bed Temp",
-        "group": "dfa9a869.693b98",
+        "group": "c284f5ba.1ce698",
         "order": 3,
         "width": "3",
         "height": "2",
@@ -223,10 +223,10 @@
         "wires": []
     },
     {
-        "id": "98f054ac.a052c8",
+        "id": "7e1ea05f.ce0fc",
         "type": "ui_text",
-        "z": "bd899e89.4cc2d",
-        "group": "dfa9a869.693b98",
+        "z": "af9cf391.fd50a",
+        "group": "c284f5ba.1ce698",
         "order": 2,
         "width": "1",
         "height": "2",
@@ -239,104 +239,110 @@
         "wires": []
     },
     {
-        "id": "57baa264.346b1c",
+        "id": "e2a77ef9.63614",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Tool Gage In",
         "links": [
-            "8446fcde.fd55c",
-            "d91441da.e90d8"
+            "fae7aca7.e9a86",
+            "bc5adfcc.2b642",
+            "3f558e8d.3c78c2",
+            "91e9d103.8e0bb"
         ],
         "x": 165,
         "y": 375,
         "wires": [
             [
-                "36511bbb.3e45a4"
+                "b888b562.eb8fa8"
             ]
         ]
     },
     {
-        "id": "26977503.32e4fa",
+        "id": "f666dcd5.c8314",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Fan Speed In",
         "links": [
-            "934898fa.560c08",
-            "acdb6686.6bf8a8"
+            "34017d00.bdd544",
+            "bbb521fc.36f16",
+            "ff8e0e91.cd031",
+            "abf72364.16af6"
         ],
         "x": 165,
         "y": 435,
         "wires": [
             [
-                "98f054ac.a052c8"
+                "7e1ea05f.ce0fc"
             ]
         ]
     },
     {
-        "id": "63b49225.cf471c",
+        "id": "ee3127f5.f2edd8",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Bed Gage In",
         "links": [
-            "169370e5.9f56bf",
-            "36c33ab8.9e3ba6"
+            "987b7b53.3f87d8",
+            "fa168e69.15d0a",
+            "122e4ff2.c3b77",
+            "8bffac0f.4baa5"
         ],
         "x": 165,
         "y": 495,
         "wires": [
             [
-                "f8bd89cc.d3eb58"
+                "2d283551.fbbe0a"
             ]
         ]
     },
     {
-        "id": "8c9dbf93.f056b",
+        "id": "33d79c57.ccff24",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Web Cam In",
         "links": [
-            "5a574141.6d783"
+            "56433905.0178a8"
         ],
         "x": 165,
         "y": 555,
         "wires": [
             [
-                "752ba823.038208"
+                "85921641.1de008"
             ]
         ]
     },
     {
-        "id": "8c715ac8.daa5d8",
+        "id": "6847d56b.d9b88c",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "EM Stop Out",
         "links": [
-            "1666da64.839926"
+            "1eb44e8b.29a071"
         ],
         "x": 720,
         "y": 315,
         "wires": []
     },
     {
-        "id": "1666da64.839926",
+        "id": "1eb44e8b.29a071",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "EM Stop In",
         "links": [
-            "8c715ac8.daa5d8"
+            "6847d56b.d9b88c"
         ],
-        "x": 285,
-        "y": 975,
+        "x": 105,
+        "y": 1280,
         "wires": [
             [
-                "397d973f.ce54a8"
+                "e54d57b6.d65398"
             ]
         ]
     },
     {
-        "id": "1a2ba700.21f119",
+        "id": "160764c2.d3814b",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Dashboard Gui - Readme",
         "info": "You must assign each of these nodes to a dashboard tab/group in the Dashboard configuration screen",
         "x": 260,
@@ -344,19 +350,19 @@
         "wires": []
     },
     {
-        "id": "b13d57ac.0a2cd8",
+        "id": "a4cc2959.594268",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Emergency Stop Nodes",
         "info": "",
-        "x": 370,
-        "y": 915,
+        "x": 190,
+        "y": 1220,
         "wires": []
     },
     {
-        "id": "168f84e2.c3064b",
+        "id": "70a4a785.6ec1f8",
         "type": "inject",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "SET WEBCAM ADDRESS IN HERE",
         "props": [
             {
@@ -368,32 +374,32 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "payload": "http://10.66.1.52:8082",
+        "payload": "http://10.66.1.52:8081",
         "payloadType": "str",
         "x": 325,
         "y": 60,
         "wires": [
             [
-                "5a574141.6d783"
+                "56433905.0178a8"
             ]
         ]
     },
     {
-        "id": "5a574141.6d783",
+        "id": "56433905.0178a8",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Web Cam Addr Out",
         "links": [
-            "8c9dbf93.f056b"
+            "33d79c57.ccff24"
         ],
         "x": 780,
         "y": 60,
         "wires": []
     },
     {
-        "id": "a0384da1.1fbd",
+        "id": "cebfbdd0.e1a0a",
         "type": "inject",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "SET PRINTER IP ADDRESS IN HERE",
         "props": [
             {
@@ -405,20 +411,20 @@
         "once": true,
         "onceDelay": "0.4",
         "topic": "",
-        "payload": "10.66.1.55",
+        "payload": "10.66.1.52",
         "payloadType": "str",
         "x": 326,
         "y": 150,
         "wires": [
             [
-                "18aea4af.a96bfb"
+                "19a39632.8d1bea"
             ]
         ]
     },
     {
-        "id": "68b86142.b09ab",
+        "id": "cfcf74ae.97a8e8",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
             "b4d07884.eec4c8"
@@ -428,9 +434,9 @@
         "wires": []
     },
     {
-        "id": "18aea4af.a96bfb",
+        "id": "19a39632.8d1bea",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set 3D Printer IP",
         "func": "msg.DuetIP = msg.payload;\nflow.set(\"DuetIP\", msg.payload);\nflow.set(\"LastDuetStatus\", false);\nreturn msg;",
         "outputs": 1,
@@ -441,14 +447,14 @@
         "y": 150,
         "wires": [
             [
-                "68b86142.b09ab"
+                "cfcf74ae.97a8e8"
             ]
         ]
     },
     {
-        "id": "b0eb8f52.dba3",
+        "id": "66e87361.a30d1c",
         "type": "inject",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Ping Duet",
         "props": [
             {
@@ -466,14 +472,14 @@
         "y": 120,
         "wires": [
             [
-                "886bd6c1.95fc18"
+                "26403b17.e375a4"
             ]
         ]
     },
     {
-        "id": "4d559852.c046e8",
+        "id": "25220ab5.ae7ea6",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set the flow variables",
         "info": "",
         "x": 625,
@@ -481,9 +487,9 @@
         "wires": []
     },
     {
-        "id": "4235ccd0.603934",
+        "id": "88e6bd96.d0e49",
         "type": "conf ping",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Ping Duet Printer",
         "host": "",
         "timeout": "5",
@@ -492,15 +498,15 @@
         "y": 120,
         "wires": [
             [
-                "a05a4e79.bfb7d",
-                "c3c29ff0.8a2f4"
+                "1bb25030.ceb1e",
+                "2a075f0a.19164"
             ]
         ]
     },
     {
-        "id": "886bd6c1.95fc18",
+        "id": "26403b17.e375a4",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Get DuetIP",
         "func": "msg.host = flow.get(\"DuetIP\");\nreturn msg;",
         "outputs": 1,
@@ -511,14 +517,14 @@
         "y": 120,
         "wires": [
             [
-                "4235ccd0.603934"
+                "88e6bd96.d0e49"
             ]
         ]
     },
     {
-        "id": "c3c29ff0.8a2f4",
+        "id": "2a075f0a.19164",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Ping Results",
         "active": false,
         "tosidebar": true,
@@ -533,9 +539,9 @@
         "wires": []
     },
     {
-        "id": "a05a4e79.bfb7d",
+        "id": "1bb25030.ceb1e",
         "type": "switch",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Is Online?",
         "property": "payload",
         "propertyType": "msg",
@@ -554,17 +560,17 @@
         "y": 120,
         "wires": [
             [
-                "e01b1b3.87c3ae8"
+                "142523fb.748c8c"
             ],
             [
-                "769a6b3d.eb0244"
+                "f2d35f86.d9bd9"
             ]
         ]
     },
     {
-        "id": "769a6b3d.eb0244",
+        "id": "f2d35f86.d9bd9",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Duet Status True",
         "func": "flow.set(\"DuetLive\", true);\nmsg.payload = true;\nreturn msg;",
         "outputs": 1,
@@ -575,15 +581,15 @@
         "y": 150,
         "wires": [
             [
-                "1bf0f071.48374",
-                "118a6935.9b41b7"
+                "ae7eabd.62c8f58",
+                "8e9d866b.4d4d68"
             ]
         ]
     },
     {
-        "id": "e01b1b3.87c3ae8",
+        "id": "142523fb.748c8c",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Duet Status False",
         "func": "flow.set(\"DuetLive\", false);\nmsg.payload = false;\nreturn msg;",
         "outputs": 1,
@@ -594,15 +600,15 @@
         "y": 90,
         "wires": [
             [
-                "1bf0f071.48374",
-                "118a6935.9b41b7"
+                "ae7eabd.62c8f58",
+                "8e9d866b.4d4d68"
             ]
         ]
     },
     {
-        "id": "5539ba44.a57c24",
+        "id": "40f43b4c.c37454",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "STEP 1 : Check Duet is live on LAN and set flow var",
         "info": "",
         "x": 1180,
@@ -610,37 +616,37 @@
         "wires": []
     },
     {
-        "id": "1bf0f071.48374",
+        "id": "ae7eabd.62c8f58",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Online Status Out",
         "links": [
-            "8d5f31a7.bc19"
+            "e70e1b5a.54d128"
         ],
         "x": 2290,
         "y": 120,
         "wires": []
     },
     {
-        "id": "8d5f31a7.bc19",
+        "id": "e70e1b5a.54d128",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Start Updates",
         "links": [
-            "1bf0f071.48374"
+            "ae7eabd.62c8f58"
         ],
         "x": 1005,
         "y": 270,
         "wires": [
             [
-                "23e44063.3b685"
+                "c599217.d3457e"
             ]
         ]
     },
     {
-        "id": "18816855.56ede8",
+        "id": "4e84f947.8c77d8",
         "type": "switch",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Start ?",
         "property": "payload",
         "propertyType": "msg",
@@ -659,29 +665,29 @@
         "y": 270,
         "wires": [
             [
-                "f6c6cd21.d9bdf"
+                "fafd5493.6b0068"
             ],
             [
-                "af4fa0e8.bb703"
+                "94f4bd1c.1d5bf"
             ]
         ]
     },
     {
-        "id": "8ba5d750.84d7a8",
+        "id": "fdcb0aa8.85adb8",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Stop Updating",
         "links": [
-            "216ddbe3.56d944"
+            "31d8fc99.4d72b4"
         ],
         "x": 1700,
         "y": 225,
         "wires": []
     },
     {
-        "id": "f6c6cd21.d9bdf",
+        "id": "fafd5493.6b0068",
         "type": "change",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "STOP",
         "rules": [
             {
@@ -701,14 +707,14 @@
         "y": 225,
         "wires": [
             [
-                "8ba5d750.84d7a8"
+                "fdcb0aa8.85adb8"
             ]
         ]
     },
     {
-        "id": "23e44063.3b685",
+        "id": "c599217.d3457e",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Check for Status Change",
         "func": "//this function filters the flow to only run on a status change.\nvar LastStatus = flow.get(\"LastDuetStatus\");\n//check if LastStatus has been set before\nif(LastStatus === undefined) {\n    flow.set(\"LastDuetStatus\", msg.payload);\n    return msg;\n} else {\n    //check if status has changed since last ping of device\n    if (LastStatus != msg.payload) {\n        flow.set(\"LastDuetStatus\", msg.payload);\n        return msg;\n    }\n}\n//if LastStatus has not changed then no msg will be passed",
         "outputs": 1,
@@ -719,27 +725,27 @@
         "y": 270,
         "wires": [
             [
-                "18816855.56ede8",
-                "81c94fa1.33fdf"
+                "4e84f947.8c77d8",
+                "34942f9b.2dc4e"
             ]
         ]
     },
     {
-        "id": "14266052.12e4a",
+        "id": "15740bc8.8bf814",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Start Updates Out",
         "links": [
-            "6cf2b699.530618"
+            "4abd4d3b.b01754"
         ],
         "x": 1700,
         "y": 315,
         "wires": []
     },
     {
-        "id": "af4fa0e8.bb703",
+        "id": "94f4bd1c.1d5bf",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Get Printer IP",
         "func": "msg.DuetIP = flow.get(\"DuetIP\");\nreturn msg;",
         "outputs": 1,
@@ -750,14 +756,14 @@
         "y": 315,
         "wires": [
             [
-                "14266052.12e4a"
+                "15740bc8.8bf814"
             ]
         ]
     },
     {
-        "id": "6161b083.7ff27",
+        "id": "4334f186.24da8",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "STEP 2 : Conditional check to start / stop updates to dashboard",
         "info": "",
         "x": 1225,
@@ -765,25 +771,25 @@
         "wires": []
     },
     {
-        "id": "6cf2b699.530618",
+        "id": "4abd4d3b.b01754",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Check API Type IN",
         "links": [
-            "14266052.12e4a"
+            "15740bc8.8bf814"
         ],
         "x": 1005,
         "y": 465,
         "wires": [
             [
-                "60455503.ce864c"
+                "7e0bad54.208824"
             ]
         ]
     },
     {
-        "id": "a7196341.a3455",
+        "id": "2680e65e.ec3b7a",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "STEP 3 : Check which API version is needed",
         "info": "",
         "x": 1165,
@@ -791,9 +797,9 @@
         "wires": []
     },
     {
-        "id": "7181d0e4.056ad",
+        "id": "f144693b.02a428",
         "type": "http request",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "GET DUET STATUS",
         "method": "GET",
         "ret": "obj",
@@ -807,15 +813,15 @@
         "y": 465,
         "wires": [
             [
-                "785ffaba.900a74",
-                "afed1d20.5b884"
+                "b37ea813.3b3ad8",
+                "473abf91.a33dc"
             ]
         ]
     },
     {
-        "id": "60455503.ce864c",
+        "id": "7e0bad54.208824",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Generate URL",
         "func": "msg.url = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\nreturn msg;",
         "outputs": 1,
@@ -826,14 +832,14 @@
         "y": 465,
         "wires": [
             [
-                "7181d0e4.056ad"
+                "f144693b.02a428"
             ]
         ]
     },
     {
-        "id": "afed1d20.5b884",
+        "id": "473abf91.a33dc",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Check API Response",
         "active": false,
         "tosidebar": true,
@@ -848,9 +854,9 @@
         "wires": []
     },
     {
-        "id": "f3ba2079.b4b4a",
+        "id": "76c17ea0.6a202",
         "type": "inject",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set True",
         "props": [
             {
@@ -872,14 +878,14 @@
         "y": 180,
         "wires": [
             [
-                "769a6b3d.eb0244"
+                "f2d35f86.d9bd9"
             ]
         ]
     },
     {
-        "id": "9e01999.d7fb768",
+        "id": "8f64017d.b04d2",
         "type": "inject",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set False",
         "props": [
             {
@@ -901,14 +907,14 @@
         "y": 60,
         "wires": [
             [
-                "e01b1b3.87c3ae8"
+                "142523fb.748c8c"
             ]
         ]
     },
     {
-        "id": "81c94fa1.33fdf",
+        "id": "34942f9b.2dc4e",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Status Change",
         "active": false,
         "tosidebar": true,
@@ -923,9 +929,9 @@
         "wires": []
     },
     {
-        "id": "118a6935.9b41b7",
+        "id": "8e9d866b.4d4d68",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "is live",
         "active": false,
         "tosidebar": true,
@@ -940,9 +946,9 @@
         "wires": []
     },
     {
-        "id": "785ffaba.900a74",
+        "id": "b37ea813.3b3ad8",
         "type": "switch",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "API Type",
         "property": "statusCode",
         "propertyType": "msg",
@@ -963,17 +969,17 @@
         "y": 465,
         "wires": [
             [
-                "1c68b2ab.d4722d"
+                "9ee9a546.764218"
             ],
             [
-                "a1572560.4a7b48"
+                "2f224806.3b8528"
             ]
         ]
     },
     {
-        "id": "1c68b2ab.d4722d",
+        "id": "9ee9a546.764218",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set API Type 2",
         "func": "flow.set(\"DuetAPIVersion\", 2)\nmsg.DuetAPIVer = 2\nreturn msg;",
         "outputs": 1,
@@ -984,14 +990,14 @@
         "y": 420,
         "wires": [
             [
-                "2ad6484f.1dd5c8"
+                "65f251a9.0dd5b"
             ]
         ]
     },
     {
-        "id": "a1572560.4a7b48",
+        "id": "2f224806.3b8528",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set API Type 1",
         "func": "flow.set(\"DuetAPIVersion\", 1)\nmsg.DuetAPIVer = 1\nreturn msg;\n\n//1 is old 2 is new",
         "outputs": 1,
@@ -1002,16 +1008,16 @@
         "y": 495,
         "wires": [
             [
-                "18b6da46.ba9ac6"
+                "6d44364f.bad0e8"
             ]
         ]
     },
     {
-        "id": "2ad6484f.1dd5c8",
+        "id": "65f251a9.0dd5b",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set API Type 2 Paths",
-        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.result.heat.heaters[1].current\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.result.heat.heaters[1].active\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.result.heat.heaters[1].standby\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.result.heat.heaters[1].max\");\nflow.set (\"ToolStatusPath\", \"msg.payload.result.heat.heaters[1].state\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.result.heat.heaters[0].current\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.result.heat.heaters[0].active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.result.heat.heaters[0].standby\");\nflow.set (\"MaxBedTempPath\", \"msg.payload.result.heat.heaters[0].max\");\nflow.set (\"BedStatusPath\", \"msg.payload.result.heat.heaters[0].state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.result.fans[0].actualValue\");\n\nreturn msg;",
+        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.result.heat.heaters[1].current\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.result.heat.heaters[1].active\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.result.heat.heaters[1].standby\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.result.heat.heaters[1].max\");\nflow.set (\"ToolStatusPath\", \"msg.payload.result.heat.heaters[1].state\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.result.heat.heaters[0].current\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.result.heat.heaters[0].active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.result.heat.heaters[0].standby\");\nflow.set (\"MaxBedTempPath\", \"msg.payload.result.heat.heaters[0].max\");\nflow.set (\"BedStatusPath\", \"msg.payload.result.heat.heaters[0].state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.result.fans[0].actualValue\");\n\n//remaining job time paths\nflow.set (\"JobTimesLeftFilePath\", \"msg.payload.job.timesLeft.file\");\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1020,16 +1026,16 @@
         "y": 420,
         "wires": [
             [
-                "f91cc299.b61ec"
+                "139fe237.3f633e"
             ]
         ]
     },
     {
-        "id": "18b6da46.ba9ac6",
+        "id": "6d44364f.bad0e8",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set API Type 1 Paths",
-        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.temps.current[1]\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.temps.tools.active[0][0]\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.temps.tools.standby[0][0]\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.tempLimit\");\nflow.set (\"ToolStatusPath\", \"msg.payload.temps.state[1]\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.temps.current[0]\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.temps.bed.active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.temps.bed.standby\");\nflow.set (\"BedStatusPath\", \"msg.payload.temps.bed.state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.params.fanPercent[0]\");\n\nreturn msg;\n\n",
+        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.temps.current[1]\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.temps.tools.active[0][0]\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.temps.tools.standby[0][0]\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.tempLimit\");\nflow.set (\"ToolStatusPath\", \"msg.payload.temps.state[1]\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.temps.current[0]\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.temps.bed.active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.temps.bed.standby\");\nflow.set (\"BedStatusPath\", \"msg.payload.temps.bed.state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.params.fanPercent[0]\");\n\n//remaining job time paths\nflow.set (\"JobTimesLeftFilePath\", \"msg.payload.timesLeft.file\");\n\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1038,60 +1044,60 @@
         "y": 495,
         "wires": [
             [
-                "f91cc299.b61ec"
+                "139fe237.3f633e"
             ]
         ]
     },
     {
-        "id": "f91cc299.b61ec",
+        "id": "139fe237.3f633e",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "52c7b6a8.a9d9c8"
+            "59bb584f.67ab58"
         ],
-        "x": 2325,
-        "y": 450,
+        "x": 2615,
+        "y": 460,
         "wires": []
     },
     {
-        "id": "52c7b6a8.a9d9c8",
+        "id": "59bb584f.67ab58",
         "type": "link in",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "f91cc299.b61ec"
+            "139fe237.3f633e"
         ],
-        "x": 285,
-        "y": 780,
+        "x": 295,
+        "y": 740,
         "wires": [
             [
-                "3a87e4ee.c88a5c"
+                "81109996.e6fd38"
             ]
         ]
     },
     {
-        "id": "3a87e4ee.c88a5c",
+        "id": "81109996.e6fd38",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Generate URL for API Version",
-        "func": "if (msg.DuetAPIVer == 1){\n    msg.url = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\n} else {\n    msg.url = \"http://\" + msg.DuetIP + \"/machine/status\";\n}\nmsg.requestTimeout = 4000;\nreturn msg;",
+        "func": "if (msg.DuetAPIVer == 1){\n    msg.url1 = \"http://\" + msg.DuetIP + \"/rr_status?type=1\";\n    msg.url2 = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\n    msg.url3 = \"http://\" + msg.DuetIP + \"/rr_status?type=3\";\n    msg.url = \"http://\" + msg.DuetIP + \"/rr_status?type=2\";\n    \n} else {\n    msg.url = \"http://\" + msg.DuetIP + \"/machine/status\";\n}\nmsg.requestTimeout = 4000;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 520,
-        "y": 780,
+        "x": 530,
+        "y": 740,
         "wires": [
             [
-                "47171098.65e9c"
+                "ea1a2065.79017"
             ]
         ]
     },
     {
-        "id": "47171098.65e9c",
+        "id": "ea1a2065.79017",
         "type": "http request",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "GET DUET STATUS",
         "method": "GET",
         "ret": "obj",
@@ -1101,111 +1107,111 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 775,
-        "y": 780,
+        "x": 785,
+        "y": 740,
         "wires": [
             [
-                "e38910e0.a4ac6",
-                "9481accd.1bb49",
-                "7d90ab79.fdb2b4",
-                "4105ae04.419a1"
+                "430f9050.c728a",
+                "cbf0cee4.656ce",
+                "d382c900.3f27d8",
+                "1129f7b5.7d1d48"
             ]
         ]
     },
     {
-        "id": "e38910e0.a4ac6",
+        "id": "430f9050.c728a",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Tool Gage Initial Parameters",
         "func": "var CurrToolTemp = eval(flow.get(\"CurrToolTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveToolTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyToolTempPath\"));\nvar MaxToolTemp = eval(flow.get(\"MaxToolTempPath\"));\nvar ToolStatus = eval(flow.get(\"ToolStatusPath\"));\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"T0: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"T0: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"T0: off\";\n} \n\nmsg.ui_control = {min:0,\n                max:Math.round(MaxToolTemp),\n                seg1:139,\n                seg2:(Math.round(MaxToolTemp) - 15),\n                colors:[\"blue\",\"green\",\"red\"],\n                gtype:\"gage\"};\n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1090,
-        "y": 645,
+        "x": 1100,
+        "y": 605,
         "wires": [
             [
-                "8446fcde.fd55c"
+                "fae7aca7.e9a86"
             ]
         ]
     },
     {
-        "id": "8446fcde.fd55c",
+        "id": "fae7aca7.e9a86",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "57baa264.346b1c"
+            "e2a77ef9.63614"
         ],
-        "x": 1290,
-        "y": 645,
+        "x": 1300,
+        "y": 605,
         "wires": []
     },
     {
-        "id": "9481accd.1bb49",
+        "id": "cbf0cee4.656ce",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Bed Gage Initial Parameters",
         "func": "var CurrToolTemp = eval(flow.get(\"CurrBedTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveBedTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyBedTempPath\"));\nvar MaxToolTemp;\nvar ToolStatus = eval(flow.get(\"BedStatusPath\"));\n\n//V1 of API does not pass back a max bed temp value so set it to 120\nif (msg.DuetAPIVer == 1){\n    MaxToolTemp = 120\n} else {\n    MaxToolTemp = eval(flow.get(\"MaxBedTempPath\"));\n}\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"BED: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"BED: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"BED: off\";\n} \n\nmsg.ui_control = {min:0,\n                max:Math.round(MaxToolTemp),\n                seg1:49,\n                seg2:(Math.round(MaxToolTemp) - 5),\n                colors:[\"blue\",\"green\",\"red\"],\n                gtype:\"gage\"};\n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1090,
-        "y": 690,
+        "x": 1100,
+        "y": 650,
         "wires": [
             [
-                "169370e5.9f56bf"
+                "987b7b53.3f87d8"
             ]
         ]
     },
     {
-        "id": "169370e5.9f56bf",
+        "id": "987b7b53.3f87d8",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "63b49225.cf471c"
+            "ee3127f5.f2edd8"
         ],
-        "x": 1290,
-        "y": 690,
+        "x": 1300,
+        "y": 650,
         "wires": []
     },
     {
-        "id": "7d90ab79.fdb2b4",
+        "id": "d382c900.3f27d8",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Initial Fan Speed",
         "func": "var FanSpeed = eval(flow.get(\"FanSpeedPath\"));\n\nif (FanSpeed >= 0.01){\n    //API v1 returns a value between 0-100 API v2 returns a value between .01-1\n    //so we need to normalise the values \n    if (msg.DuetAPIVer == 2) {\n        msg.payload = FanSpeed * 100;\n    } else {\n        msg.payload = FanSpeed;\n    }\n} else {msg.payload = 0;}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1060,
-        "y": 735,
+        "x": 1070,
+        "y": 695,
         "wires": [
             [
-                "934898fa.560c08"
+                "34017d00.bdd544"
             ]
         ]
     },
     {
-        "id": "934898fa.560c08",
+        "id": "34017d00.bdd544",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "26977503.32e4fa"
+            "f666dcd5.c8314"
         ],
-        "x": 1290,
-        "y": 735,
+        "x": 1300,
+        "y": 695,
         "wires": []
     },
     {
-        "id": "c250b4d9.c62718",
+        "id": "49e61b5d.81d4b4",
         "type": "delay",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "pauseType": "delay",
         "timeout": "5",
@@ -1217,134 +1223,134 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1215,
+        "x": 1210,
+        "y": 740,
+        "wires": [
+            [
+                "a64256e3.e312a8"
+            ]
+        ]
+    },
+    {
+        "id": "31d8fc99.4d72b4",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "fdcb0aa8.85adb8"
+        ],
+        "x": 1255,
         "y": 780,
         "wires": [
             [
-                "98da945.cc6c068"
+                "a64256e3.e312a8"
             ]
         ]
     },
     {
-        "id": "216ddbe3.56d944",
-        "type": "link in",
-        "z": "bd899e89.4cc2d",
-        "name": "",
-        "links": [
-            "8ba5d750.84d7a8"
-        ],
-        "x": 1275,
-        "y": 855,
-        "wires": [
-            [
-                "98da945.cc6c068"
-            ]
-        ]
-    },
-    {
-        "id": "698468b6.679868",
+        "id": "f527c91a.3cfdc8",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Fan Speed",
         "func": "var FanSpeed = eval(flow.get(\"FanSpeedPath\"));\n\nif (FanSpeed >= 0.01){\n    //API v1 returns a value between 0-100 API v2 returns a value between .01-1\n    //so we need to normalise the values \n    if (msg.DuetAPIVer == 2) {\n        msg.payload = FanSpeed * 100;\n    } else {\n        msg.payload = FanSpeed;\n    }\n} else {msg.payload = 0;}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2000,
-        "y": 825,
+        "x": 1980,
+        "y": 1040,
         "wires": [
             [
-                "acdb6686.6bf8a8"
+                "bbb521fc.36f16"
             ]
         ]
     },
     {
-        "id": "80487991.c394d8",
+        "id": "2b62e9e0.101946",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Bed Gage Values",
         "func": "var CurrToolTemp = eval(flow.get(\"CurrBedTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveBedTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyBedTempPath\"));\nvar MaxToolTemp;\nvar ToolStatus = eval(flow.get(\"BedStatusPath\"));\n\n//V1 of API does not pass back a max bed temp value so set it to 120\nif (msg.DuetAPIVer == 1){\n    MaxToolTemp = 120\n} else {\n    MaxToolTemp = eval(flow.get(\"MaxToolBedPath\"));\n}\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"BED: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"BED: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"BED: off\";\n} \n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2020,
-        "y": 780,
+        "x": 2000,
+        "y": 1000,
         "wires": [
             [
-                "36c33ab8.9e3ba6"
+                "fa168e69.15d0a"
             ]
         ]
     },
     {
-        "id": "b43d32bc.2e718",
+        "id": "72cbc559.aa499c",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Tool Gage Values",
         "func": "var CurrToolTemp = eval(flow.get(\"CurrToolTempPath\"));\nvar ActiveToolTemp = eval(flow.get(\"ActiveToolTempPath\"));\nvar StandbyToolTemp = eval(flow.get(\"StandbyToolTempPath\"));\nvar MaxToolTemp = eval(flow.get(\"MaxToolTempPath\"));\nvar ToolStatus = eval(flow.get(\"ToolStatusPath\"));\n\nif (ToolStatus == \"active\" || ToolStatus == 2) {\n    TargToolTemp = ActiveToolTemp;\n    msg.label = \"T0: active > \" + TargToolTemp;\n}\n\nif (ToolStatus == \"standby\" || ToolStatus == 1) {\n    TargToolTemp = StandbyToolTemp;\n    msg.label = \"T0: standby > \" + TargToolTemp;\n}\n\n\nif (ToolStatus == \"off\" || ToolStatus === 0) {\n    TargToolTemp = 0;\n    msg.label = \"T0: off\";\n} \n\nmsg.payload = Math.round(CurrToolTemp);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2020,
-        "y": 735,
+        "x": 2000,
+        "y": 960,
         "wires": [
             [
-                "d91441da.e90d8"
+                "bc5adfcc.2b642"
             ]
         ]
     },
     {
-        "id": "d91441da.e90d8",
+        "id": "bc5adfcc.2b642",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "57baa264.346b1c"
+            "e2a77ef9.63614"
         ],
-        "x": 2265,
-        "y": 735,
+        "x": 2235,
+        "y": 960,
         "wires": []
     },
     {
-        "id": "36c33ab8.9e3ba6",
+        "id": "fa168e69.15d0a",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "63b49225.cf471c"
+            "ee3127f5.f2edd8"
         ],
-        "x": 2265,
-        "y": 780,
+        "x": 2235,
+        "y": 1000,
         "wires": []
     },
     {
-        "id": "acdb6686.6bf8a8",
+        "id": "bbb521fc.36f16",
         "type": "link out",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "links": [
-            "26977503.32e4fa"
+            "f666dcd5.c8314"
         ],
-        "x": 2265,
-        "y": 825,
+        "x": 2235,
+        "y": 1040,
         "wires": []
     },
     {
-        "id": "1bda2d04.689df3",
+        "id": "36921a4a.3899c6",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set the gauge ranges (only once)",
         "info": "",
-        "x": 1090,
-        "y": 600,
+        "x": 1100,
+        "y": 560,
         "wires": []
     },
     {
-        "id": "7a1cdeb8.371d2",
+        "id": "f6d11474.238568",
         "type": "http request",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "GET DUET STATUS",
         "method": "GET",
         "ret": "obj",
@@ -1354,21 +1360,18 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1690,
-        "y": 780,
+        "x": 480,
+        "y": 1000,
         "wires": [
             [
-                "b43d32bc.2e718",
-                "80487991.c394d8",
-                "698468b6.679868",
-                "781f02fb.0c4d3c"
+                "504a6c5e.f3df34"
             ]
         ]
     },
     {
-        "id": "781f02fb.0c4d3c",
+        "id": "e2577a44.45d148",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Full Duet Status Query Response",
         "active": false,
         "tosidebar": true,
@@ -1378,24 +1381,24 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2060,
-        "y": 690,
+        "x": 1200,
+        "y": 1080,
         "wires": []
     },
     {
-        "id": "2dfb2b96.843f84",
+        "id": "764226c6.1242e8",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
-        "name": "Main Dashboard Status Update nodes",
+        "z": "af9cf391.fd50a",
+        "name": "Main Dashboard Set Parameters nodes",
         "info": "",
-        "x": 420,
-        "y": 735,
+        "x": 430,
+        "y": 695,
         "wires": []
     },
     {
-        "id": "9d3308e7.46b4d8",
+        "id": "11dc610c.8112cf",
         "type": "switch",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "API Version Check",
         "property": "DuetAPIVer",
         "propertyType": "msg",
@@ -1414,21 +1417,21 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 930,
-        "y": 975,
+        "x": 750,
+        "y": 1280,
         "wires": [
             [
-                "f97fefdf.cdc8a"
+                "952fa5b9.b47908"
             ],
             [
-                "cd22b107.55546"
+                "9250be3f.54eec"
             ]
         ]
     },
     {
-        "id": "c87702a1.78653",
+        "id": "56f88c63.76f834",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set the duet response paths for the values needed",
         "info": "",
         "x": 2215,
@@ -1436,9 +1439,9 @@
         "wires": []
     },
     {
-        "id": "119cfefb.22e941",
+        "id": "dbdbeb3a.226fb8",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Add more values by adding paths (Readme)",
         "info": "By activating \"Full Duet Status Query Response\" debug node you will get access to the full return from duet. Here you can work out the paths you need for the values you want to get from the Duet.\n\nAdding these paths to the \"Set API Type x Paths\" function node(s) will allow you to add more items to the dashboard.\n\n",
         "x": 2195,
@@ -1446,63 +1449,63 @@
         "wires": []
     },
     {
-        "id": "cd22b107.55546",
+        "id": "9250be3f.54eec",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Generate URL",
         "func": "msg.url = \"http://\" + msg.DuetIP + \"/machine/code/\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1145,
-        "y": 1020,
+        "x": 965,
+        "y": 1325,
         "wires": [
             [
-                "9b20015c.5d7d4"
+                "f99d2e31.c9d7b"
             ]
         ]
     },
     {
-        "id": "f97fefdf.cdc8a",
+        "id": "952fa5b9.b47908",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Generate URL",
         "func": "msg.url = \"http://\" + msg.DuetIP + \"/rr_gcode?gcode=M112\";\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1145,
-        "y": 930,
+        "x": 965,
+        "y": 1235,
         "wires": [
             [
-                "aa668c3d.84762"
+                "f13d96ab.16c4b8"
             ]
         ]
     },
     {
-        "id": "67ec3299.8c91cc",
+        "id": "3196606e.a15a8",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Get Printer & Flow Values",
         "func": "msg.DuetAPIVer = flow.get(\"DuetAPIVersion\");\nmsg.DuetIP = flow.get(\"DuetIP\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 695,
-        "y": 975,
+        "x": 515,
+        "y": 1280,
         "wires": [
             [
-                "9d3308e7.46b4d8"
+                "11dc610c.8112cf"
             ]
         ]
     },
     {
-        "id": "aa668c3d.84762",
+        "id": "f13d96ab.16c4b8",
         "type": "change",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set G Code",
         "rules": [
             {
@@ -1518,18 +1521,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1360,
-        "y": 930,
+        "x": 1180,
+        "y": 1235,
         "wires": [
             [
-                "90f76e0.05afd9"
+                "b9af36f2.4f9178"
             ]
         ]
     },
     {
-        "id": "90f76e0.05afd9",
+        "id": "b9af36f2.4f9178",
         "type": "http request",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "EMSTOP",
         "method": "GET",
         "ret": "obj",
@@ -1539,36 +1542,36 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1560,
-        "y": 930,
+        "x": 1380,
+        "y": 1235,
         "wires": [
             [
-                "3440f423.ca728c"
+                "b292969f.c71348"
             ]
         ]
     },
     {
-        "id": "f83bf371.e5ecd",
+        "id": "44810c18.e28f34",
         "type": "function",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Set Status False",
         "func": "flow.set(\"DuetLive\", false);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 2000,
-        "y": 975,
+        "x": 1820,
+        "y": 1280,
         "wires": [
             [
-                "c3e1ec03.3d8d2"
+                "3d34b1e1.52b5ae"
             ]
         ]
     },
     {
-        "id": "3440f423.ca728c",
+        "id": "b292969f.c71348",
         "type": "delay",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "",
         "pauseType": "delay",
         "timeout": "15",
@@ -1580,50 +1583,50 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1800,
-        "y": 975,
+        "x": 1620,
+        "y": 1280,
         "wires": [
             [
-                "f83bf371.e5ecd"
+                "44810c18.e28f34"
             ]
         ]
     },
     {
-        "id": "3fa53f4d.12055",
+        "id": "65140126.aaad",
         "type": "comment",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Mitigation against status updates stopping",
         "info": "",
-        "x": 1910,
-        "y": 930,
+        "x": 1730,
+        "y": 1235,
         "wires": []
     },
     {
-        "id": "98da945.cc6c068",
+        "id": "a64256e3.e312a8",
         "type": "looptimer2",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "duration": "5",
         "units": "Second",
         "maxloops": "10000",
         "maxtimeout": "96",
         "maxtimeoutunits": "Hour",
         "name": "",
-        "x": 1415,
-        "y": 780,
+        "x": 1425,
+        "y": 740,
         "wires": [
             [
-                "7a1cdeb8.371d2",
-                "11fed9c0.8542f6"
+                "6d2ce75d.887548",
+                "a8d4dcd.a5dec2"
             ],
             [
-                "11fed9c0.8542f6"
+                "6d2ce75d.887548"
             ]
         ]
     },
     {
-        "id": "11fed9c0.8542f6",
+        "id": "6d2ce75d.887548",
         "type": "debug",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Loop Check",
         "active": false,
         "tosidebar": true,
@@ -1633,14 +1636,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1660,
-        "y": 735,
+        "x": 1630,
+        "y": 680,
         "wires": []
     },
     {
-        "id": "4105ae04.419a1",
+        "id": "1129f7b5.7d1d48",
         "type": "change",
-        "z": "bd899e89.4cc2d",
+        "z": "af9cf391.fd50a",
         "name": "Clear Status",
         "rules": [
             {
@@ -1656,27 +1659,585 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 780,
+        "x": 1040,
+        "y": 740,
         "wires": [
             [
-                "c250b4d9.c62718"
+                "49e61b5d.81d4b4"
             ]
         ]
     },
     {
-        "id": "dfa9a869.693b98",
+        "id": "bc39ee15.80a2f",
+        "type": "function",
+        "z": "af9cf391.fd50a",
+        "name": "Get Job Remaining Time",
+        "func": "var JobTime = eval(flow.get(\"JobTimesLeftFilePath\"));\n\nif (typeof JobTime == 'undefined' || JobTime === null) {JobTime = 0;}\n\n\nfunction secondsToHms(d) {\n    if (d === 0) {return \"00:00:00\";}\n    d = Number(d);\n    var h = Math.floor(d / 3600);\n    var m = Math.floor(d % 3600 / 60);\n    var s = Math.floor(d % 3600 % 60);\n\n    var hDisplay = h > 0 ? h + (h == 1 ? \" hour, \" : \" hours, \") : \"\";\n    var mDisplay = m > 0 ? m + (m == 1 ? \" minute, \" : \" minutes, \") : \"\";\n    var sDisplay = s > 0 ? s + (s == 1 ? \" second\" : \" seconds\") : \"\";\n    return hDisplay + mDisplay + sDisplay; \n}\n\nmsg.payload = \"Remaining Time: \" + secondsToHms(JobTime);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2010,
+        "y": 1080,
+        "wires": [
+            [
+                "b4bce984.f32f78"
+            ]
+        ]
+    },
+    {
+        "id": "b4bce984.f32f78",
+        "type": "switch",
+        "z": "af9cf391.fd50a",
+        "name": "No Current Job Filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Remaining Time: 00:00:00",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2260,
+        "y": 1080,
+        "wires": [
+            [],
+            [
+                "6773fcd2.c41b54"
+            ]
+        ]
+    },
+    {
+        "id": "6773fcd2.c41b54",
+        "type": "debug",
+        "z": "af9cf391.fd50a",
+        "name": "Current Job Message",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2500,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "10bcfb7e.c78445",
+        "type": "function",
+        "z": "af9cf391.fd50a",
+        "name": "Set API Type 2 Paths (Alternative Beta Firmware Paths)",
+        "func": "//T0 paths\n\nflow.set (\"CurrToolTempPath\", \"msg.payload.heat.heaters[1].current\");\nflow.set (\"ActiveToolTempPath\", \"msg.payload.heat.heaters[1].active\");\nflow.set (\"StandbyToolTempPath\", \"msg.payload.heat.heaters[1].standby\");\nflow.set (\"MaxToolTempPath\", \"msg.payload.heat.heaters[1].max\");\nflow.set (\"ToolStatusPath\", \"msg.payload.heat.heaters[1].state\");\n\n//Bed paths\nflow.set (\"CurrBedTempPath\", \"msg.payload.heat.heaters[0].current\");\nflow.set (\"ActiveBedTempPath\", \"msg.payload.heat.heaters[0].active\");\nflow.set (\"StandbyBedTempPath\", \"msg.payload.heat.heaters[0].standby\");\nflow.set (\"MaxBedTempPath\", \"msg.payload.heat.heaters[0].max\");\nflow.set (\"BedStatusPath\", \"msg.payload.heat.heaters[0].state\");\n\n//Fan paths\nflow.set (\"FanSpeedPath\", \"msg.payload.fans[0].actualValue\");\n\n//remaining job time paths\nflow.set (\"JobTimesLeftFilePath\", \"msg.payload.job.timesLeft.file\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2250,
+        "y": 320,
+        "wires": [
+            [
+                "139fe237.3f633e"
+            ]
+        ]
+    },
+    {
+        "id": "a8d4dcd.a5dec2",
+        "type": "switch",
+        "z": "af9cf391.fd50a",
+        "name": "API Type",
+        "property": "DuetAPIVer",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1620,
+        "y": 740,
+        "wires": [
+            [
+                "cb97723c.b6d4f"
+            ],
+            [
+                "8e59028.4ea5a"
+            ]
+        ]
+    },
+    {
+        "id": "572a3798.340778",
+        "type": "function",
+        "z": "af9cf391.fd50a",
+        "name": "Data Set 1",
+        "func": "msg.url = msg.url1\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 270,
+        "y": 940,
+        "wires": [
+            [
+                "e8cc4a28.da5e98",
+                "f6d11474.238568"
+            ]
+        ]
+    },
+    {
+        "id": "92d674ba.15d558",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "f5a5bb1e.492c28",
+            "4f92b160.b80ba"
+        ],
+        "x": 1835,
+        "y": 960,
+        "wires": [
+            [
+                "72cbc559.aa499c"
+            ]
+        ]
+    },
+    {
+        "id": "9ca7220a.3e673",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "f5a5bb1e.492c28",
+            "4f92b160.b80ba"
+        ],
+        "x": 1835,
+        "y": 1000,
+        "wires": [
+            [
+                "2b62e9e0.101946"
+            ]
+        ]
+    },
+    {
+        "id": "66cb4cd2.0d6fa4",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "f5a5bb1e.492c28",
+            "4a2d3ca0.4b6984"
+        ],
+        "x": 1835,
+        "y": 1080,
+        "wires": [
+            [
+                "bc39ee15.80a2f"
+            ]
+        ]
+    },
+    {
+        "id": "5d6de00.6fc532",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "f5a5bb1e.492c28",
+            "4f92b160.b80ba"
+        ],
+        "x": 1835,
+        "y": 1040,
+        "wires": [
+            [
+                "f527c91a.3cfdc8"
+            ]
+        ]
+    },
+    {
+        "id": "80d953f5.66fba",
+        "type": "function",
+        "z": "af9cf391.fd50a",
+        "name": "Data Set 2",
+        "func": "msg.url = msg.url2\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 940,
+        "wires": [
+            [
+                "be57fad5.87ca18",
+                "e27e450f.efb078"
+            ]
+        ]
+    },
+    {
+        "id": "690f226e.cdbd9c",
+        "type": "function",
+        "z": "af9cf391.fd50a",
+        "name": "Data Set 3",
+        "func": "msg.url = msg.url3\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 950,
+        "y": 940,
+        "wires": [
+            [
+                "1558633e.5f475d"
+            ]
+        ]
+    },
+    {
+        "id": "e8cc4a28.da5e98",
+        "type": "delay",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 440,
+        "y": 940,
+        "wires": [
+            [
+                "80d953f5.66fba"
+            ]
+        ]
+    },
+    {
+        "id": "be57fad5.87ca18",
+        "type": "delay",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 780,
+        "y": 940,
+        "wires": [
+            [
+                "690f226e.cdbd9c"
+            ]
+        ]
+    },
+    {
+        "id": "504a6c5e.f3df34",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "a9fd122d.f9cd2"
+        ],
+        "x": 635,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "4f92b160.b80ba",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "92d674ba.15d558",
+            "9ca7220a.3e673",
+            "5d6de00.6fc532",
+            "a9fd122d.f9cd2"
+        ],
+        "x": 975,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "4a2d3ca0.4b6984",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "a9fd122d.f9cd2",
+            "66cb4cd2.0d6fa4"
+        ],
+        "x": 1315,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "fcc33d3f.f9846",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "cb97723c.b6d4f"
+        ],
+        "x": 115,
+        "y": 940,
+        "wires": [
+            [
+                "572a3798.340778"
+            ]
+        ]
+    },
+    {
+        "id": "cb97723c.b6d4f",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "fcc33d3f.f9846"
+        ],
+        "x": 1755,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "e27e450f.efb078",
+        "type": "http request",
+        "z": "af9cf391.fd50a",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 820,
+        "y": 1000,
+        "wires": [
+            [
+                "4f92b160.b80ba"
+            ]
+        ]
+    },
+    {
+        "id": "1558633e.5f475d",
+        "type": "http request",
+        "z": "af9cf391.fd50a",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1160,
+        "y": 1000,
+        "wires": [
+            [
+                "4a2d3ca0.4b6984"
+            ]
+        ]
+    },
+    {
+        "id": "d357984f.f4bd28",
+        "type": "comment",
+        "z": "af9cf391.fd50a",
+        "name": "Get Data Sets for API Type 1",
+        "info": "Uses three call as this older API uses different request urls to fetch different sets of data",
+        "x": 220,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "bbbdfe01.62fb",
+        "type": "comment",
+        "z": "af9cf391.fd50a",
+        "name": "Main Dashboard Status Update nodes",
+        "info": "",
+        "x": 1970,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "a9fd122d.f9cd2",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "f5a5bb1e.492c28",
+            "504a6c5e.f3df34",
+            "4f92b160.b80ba",
+            "4a2d3ca0.4b6984"
+        ],
+        "x": 995,
+        "y": 1080,
+        "wires": [
+            [
+                "e2577a44.45d148"
+            ]
+        ]
+    },
+    {
+        "id": "703bdefa.15764",
+        "type": "http request",
+        "z": "af9cf391.fd50a",
+        "name": "GET DUET STATUS",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 300,
+        "y": 1080,
+        "wires": [
+            [
+                "f5a5bb1e.492c28"
+            ]
+        ]
+    },
+    {
+        "id": "f5a5bb1e.492c28",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "92d674ba.15d558",
+            "9ca7220a.3e673",
+            "5d6de00.6fc532",
+            "66cb4cd2.0d6fa4",
+            "a9fd122d.f9cd2"
+        ],
+        "x": 455,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "19fa6766.7b7d99",
+        "type": "comment",
+        "z": "af9cf391.fd50a",
+        "name": "Get Data Sets for API Type 2",
+        "info": "Uses three call as this older API uses different request urls to fetch different sets of data",
+        "x": 220,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "12a34330.fa659d",
+        "type": "link in",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "8e59028.4ea5a"
+        ],
+        "x": 115,
+        "y": 1080,
+        "wires": [
+            [
+                "703bdefa.15764"
+            ]
+        ]
+    },
+    {
+        "id": "8e59028.4ea5a",
+        "type": "link out",
+        "z": "af9cf391.fd50a",
+        "name": "",
+        "links": [
+            "12a34330.fa659d"
+        ],
+        "x": 1755,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9c15eda4.479ce",
+        "type": "comment",
+        "z": "af9cf391.fd50a",
+        "name": "API 1 Data Set 1 Not currently used in this flow",
+        "info": "Included for completeness",
+        "x": 1240,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "a6842937.5fee08",
+        "type": "inject",
+        "z": "af9cf391.fd50a",
+        "name": "Manually Stop Update Checks",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 820,
+        "wires": [
+            [
+                "a64256e3.e312a8"
+            ]
+        ]
+    },
+    {
+        "id": "32bbafce.77862",
+        "type": "comment",
+        "z": "af9cf391.fd50a",
+        "name": "Use these paths for API 2 if using the 3.1+ Betas",
+        "info": "",
+        "x": 2220,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c284f5ba.1ce698",
         "type": "ui_group",
         "z": "",
-        "name": "3DP 1 Status",
-        "tab": "bba70658.7faa28",
+        "name": "3DP 2 Status",
+        "tab": "712fac99.add4d4",
         "order": 1,
         "disp": true,
         "width": "7",
         "collapse": true
     },
     {
-        "id": "bba70658.7faa28",
+        "id": "712fac99.add4d4",
         "type": "ui_tab",
         "z": "",
         "name": "Duet Dashboard",
