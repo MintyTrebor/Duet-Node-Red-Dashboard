@@ -21,6 +21,11 @@ Assign the Dashboard GUI nodes to your dashboard group configuration.
 
 ![Duet Dashboard Universal.json](flow.jpg)
 
+Duet Dashboard Universal Flow Update : 11-OCT-2020
+Updated to show how to get all three types of status updates from API V1.  
+Included example of how to process Remaining Job Time  
+Added alternative Object Model API Paths for Firmwares V3.1+.
+
 
 *************************
 
@@ -42,7 +47,7 @@ Notes:
 Two different methods for getting the data from the Duet RRF are to accomodate the version diffferences between 2 Duet API Versions.
 
 Note 2:
-Recently DSF has updated the api, which has removed "result" from the returned object model. If you are on this newer (currently beta) version you will need to edit the node ["Set API Type 2 Paths"] and remove "result" from the paths in the code. For example: "msg.payload.result.heat.heaters[1].current" would become "msg.payload.heat.heaters[1].current".
+Recently DSF has updated the api, which has removed "result" from the returned object model. If you are on this newer (currently beta) version you will need to edit the node ["Set API Type 2 Paths"] and remove "result" from the paths in the code. For example: "msg.payload.result.heat.heaters[1].current" would become "msg.payload.heat.heaters[1].current". An example has been included in the updated "Universal Flow".
 
 The flows are not optimised.
 
