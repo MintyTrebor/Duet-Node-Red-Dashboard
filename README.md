@@ -21,7 +21,7 @@ Assign the Dashboard GUI nodes to your dashboard group configuration.
 
 ![Duet Dashboard Universal.json](flow.jpg)
 
-Duet Dashboard Universal Flow Update : 11-OCT-2020
+Duet Dashboard Universal Flow Update : 11-OCT-2020  
 Updated to show how to get all three types of status updates from API V1.  
 Included example of how to process Remaining Job Time  
 Added alternative Object Model API Paths for Firmwares V3.1+.
